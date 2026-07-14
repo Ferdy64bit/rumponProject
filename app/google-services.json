@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "729780321825",
+    "project_id": "fishing-point-tanjung-anom",
+    "storage_bucket": "fishing-point-tanjung-anom.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729780321825:android:a6627f54b09956ce4aad60",
+        "android_client_info": {
+          "package_name": "com.example.java3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729780321825-rdd54bq19nt5uiqbqi2s7ph5iuvodn8p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.java3",
+            "certificate_hash": "7c171d3924b50b043345595af055b3d766fd362e"
+          }
+        },
+        {
+          "client_id": "729780321825-5nej6b6vk79java185ckkpq0ihvcfd4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuDlhP2ppTmf2jKxH4kTs6QxoBVv9-Gf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729780321825-5nej6b6vk79java185ckkpq0ihvcfd4p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

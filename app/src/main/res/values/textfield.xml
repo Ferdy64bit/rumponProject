@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom TextInputLayout Style -->
+    <style name="WidgetAppTextInputLayout" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxCornerRadiusTopStart">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/input_corner_radius</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxBackgroundColor">@color/surfaceVariant</item>
+        <item name="hintTextColor">@color/onSurfaceVariant</item>
+        <item name="android:textColorHint">@color/onSurfaceVariant</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_16</item>
+    </style>
+
+    <!-- Custom TextInputEditText Style -->
+    <style name="WidgetAppTextInputEditText" parent="Widget.Material3.TextInputEditText.FilledBox">
+        <item name="android:paddingVertical">@dimen/spacing_16</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.BodyLarge</item>
+    </style>
+</resources>

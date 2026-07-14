@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="92dp"
+    android:layout_marginBottom="@dimen/spacing_12"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="3dp"
+    app:strokeColor="#EEF2F7"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/spacing_10">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivSpotImage"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:contentDescription="@string/spot_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_spot_dermaga"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlayAppCornerMedium" />
+
+        <TextView
+            android:id="@+id/tvSpotName"
+            style="@style/TextAppearance.App.TitleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_12"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text="Dermaga Tanjung Anom"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@id/tvBadge"
+            app:layout_constraintStart_toEndOf="@id/ivSpotImage"
+            app:layout_constraintTop_toTopOf="@id/ivSpotImage" />
+
+        <LinearLayout
+            android:id="@+id/distanceRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_12"
+            android:layout_marginTop="@dimen/spacing_6"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivSpotImage"
+            app:layout_constraintTop_toBottomOf="@id/tvSpotName">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:contentDescription="@string/location"
+                android:src="@drawable/ic_location_pin"
+                app:tint="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/tvDistance"
+                style="@style/TextAppearance.App.BodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4"
+                android:text="1.2 km"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ratingRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_12"
+            android:layout_marginTop="@dimen/spacing_6"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/ivSpotImage"
+            app:layout_constraintEnd_toStartOf="@id/tvBadge"
+            app:layout_constraintStart_toEndOf="@id/ivSpotImage"
+            app:layout_constraintTop_toBottomOf="@id/distanceRow"
+            app:layout_constraintVertical_bias="1">
+
+            <TextView
+                style="@style/TextAppearance.App.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#9733;"
+                android:textColor="@color/tertiary"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvRating"
+                style="@style/TextAppearance.App.BodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4"
+                android:text="4.8 (120)"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvBadge"
+            style="@style/TextAppearance.App.LabelSmall"
+            android:layout_width="72dp"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="&#9733;&#9733;&#9733;&#9733;&#9733;"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivSpotImage"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
