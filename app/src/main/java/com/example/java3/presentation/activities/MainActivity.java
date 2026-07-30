@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         
         ViewCompat.setOnApplyWindowInsetsListener(binding.main, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, 0, systemBars.right, 0); // Keep bottom nav reachable
+            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom);
             return insets;
         });
 

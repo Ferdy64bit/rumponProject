@@ -65,8 +65,8 @@
     <string name="notifications">Notifikasi</string>
     <string name="weather_icon">Ikon cuaca</string>
     <string name="view_detail">Lihat detail</string>
-    <string name="tide_up">Pasang naik</string>
-    <string name="tide_chart">Grafik pasang surut</string>
+    <string name="tide_up">Kondisi perairan</string>
+    <string name="tide_chart">Prakiraan perairan</string>
     <string name="location">Lokasi</string>
     <string name="back">Kembali</string>
     <string name="search">Cari</string>
@@ -79,7 +79,7 @@
     <string name="favorite">Favorit</string>
     <string name="tab_summary">Ringkasan</string>
     <string name="tab_weather">Cuaca</string>
-    <string name="tab_tide">Pasang</string>
+    <string name="tab_tide">Perairan</string>
     <string name="tab_reviews">Ulasan</string>
     <string name="highly_recommended_id">Sangat Direkomendasikan</string>
     <string name="weather_cloudy_id">Berawan</string>
@@ -87,7 +87,7 @@
     <string name="info_wind">Angin</string>
     <string name="info_humidity">Kelembapan</string>
     <string name="info_fish_activity">Aktivitas Ikan</string>
-    <string name="info_tide">Pasang Surut</string>
+    <string name="info_tide">Kondisi Perairan</string>
     <string name="info_distance">Jarak</string>
     <string name="fish_activity_high">Sangat Tinggi</string>
     <string name="navigation">Navigasi</string>

@@ -1,10 +1,10 @@
 package com.example.java3.presentation.adapters;
 
-import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -28,9 +28,11 @@ public class SpotListAdapter extends RecyclerView.Adapter<SpotListAdapter.ViewHo
     }
 
     public void submitList(List<SpotUiModel> newItems) {
+        List<SpotUiModel> nextItems = newItems != null ? new ArrayList<>(newItems) : new ArrayList<>();
+        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new SpotDiffCallback(items, nextItems));
         items.clear();
-        items.addAll(newItems);
-        notifyDataSetChanged();
+        items.addAll(nextItems);
+        diffResult.dispatchUpdatesTo(this);
     }
 
     @NonNull
@@ -66,36 +68,70 @@ public class SpotListAdapter extends RecyclerView.Adapter<SpotListAdapter.ViewHo
                         .load(item.getImageUrl())
                         .placeholder(item.getImageResId())
                         .error(item.getImageResId())
+                        .centerCrop()
+                        .thumbnail(0.25f)
                         .into(binding.ivSpotImage);
             }
             binding.tvSpotName.setText(item.getName());
-            binding.tvDistance.setText(String.format(Locale.getDefault(), "%.1f km", item.getDistance()));
-            binding.tvRating.setText(String.format(Locale.getDefault(), "%.1f (%d)", item.getRating(), item.getReviewCount()));
-            binding.tvBadge.setText(createStars(Math.round(item.getRating())));
-            binding.tvBadge.setBackground(createBadgeBackground(item.getBadgeColor()));
+            binding.tvDistance.setText(String.format(Locale.getDefault(), "%.1f km dari lokasi Anda", item.getDistance()));
+            binding.tvSpotMeta.setText(item.getType());
+            binding.getRoot().setContentDescription(String.format(
+                    Locale.getDefault(),
+                    "%s, %.1f kilometer dari lokasi Anda. Ketuk untuk melihat rekomendasi live.",
+                    item.getName(),
+                    item.getDistance()
+            ));
             binding.getRoot().setOnClickListener(v -> {
                 if (listener != null) {
                     listener.onSpotClick(item);
                 }
             });
         }
+    }
 
-        private GradientDrawable createBadgeBackground(int color) {
-            float radius = itemView.getResources().getDisplayMetrics().density * 999;
-            GradientDrawable drawable = new GradientDrawable();
-            drawable.setShape(GradientDrawable.RECTANGLE);
-            drawable.setColor(color);
-            drawable.setCornerRadius(radius);
-            return drawable;
+    private static class SpotDiffCallback extends DiffUtil.Callback {
+        private final List<SpotUiModel> oldItems;
+        private final List<SpotUiModel> newItems;
+
+        SpotDiffCallback(List<SpotUiModel> oldItems, List<SpotUiModel> newItems) {
+            this.oldItems = oldItems;
+            this.newItems = newItems;
         }
 
-        private String createStars(int count) {
-            StringBuilder stars = new StringBuilder();
-            int safeCount = Math.max(1, Math.min(count, 5));
-            for (int i = 0; i < safeCount; i++) {
-                stars.append('\u2605');
+        @Override
+        public int getOldListSize() {
+            return oldItems.size();
+        }
+
+        @Override
+        public int getNewListSize() {
+            return newItems.size();
+        }
+
+        @Override
+        public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
+            String oldId = oldItems.get(oldItemPosition).getId();
+            String newId = newItems.get(newItemPosition).getId();
+            if (oldId != null && newId != null && !oldId.isEmpty() && !newId.isEmpty()) {
+                return oldId.equals(newId);
             }
-            return stars.toString();
+            return oldItems.get(oldItemPosition).getName().equals(newItems.get(newItemPosition).getName());
+        }
+
+        @Override
+        public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
+            SpotUiModel oldItem = oldItems.get(oldItemPosition);
+            SpotUiModel newItem = newItems.get(newItemPosition);
+            return oldItem.getName().equals(newItem.getName())
+                    && oldItem.getImageResId() == newItem.getImageResId()
+                    && safeEquals(oldItem.getImageUrl(), newItem.getImageUrl())
+                    && safeEquals(oldItem.getType(), newItem.getType())
+                    && Math.abs(oldItem.getDistance() - newItem.getDistance()) < 0.05;
+        }
+
+        private boolean safeEquals(String first, String second) {
+            if (first == null) return second == null;
+            return first.equals(second);
         }
     }
 }

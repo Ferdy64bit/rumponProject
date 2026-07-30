@@ -1,0 +1,723 @@
+Data bmkg Lengkap
+
+format data : JSON
+Polygon Peta Pembagian Wilayah Prakiraan: https://peta-maritim.bmkg.go.id/public_api/static/wilayah_perairan.json
+Overview gelombang: https://peta-maritim.bmkg.go.id/public_api/overview/gelombang.json
+Penjelasan parameter: 
+Parameter
+issued: Waktu publikasi atau rilis prakiraan oleh stasiun dalam UTC (format YYYY-MM-DD hh:mm)
+valid_from: Waktu awal berlakunya prakiraan (format YYYY-MM-DD hh:mm)
+valid_to: Waktu akhir berlakunya prakiraan (format YYYY-MM-DD hh:mm)
+time_desc: Deskripsi waktu (Hari ini, Besok, H+2, H+3)
+weather: Kondisi cuaca (Cerah, Cerah Berawan, Berawan, Berawan Tebal, Asap, Kabut, Hujan Ringan, Hujan Sedang, Hujan Lebat, Hujan Lokal, Hujan Badai)
+weather_desc: Deskripsi cuaca secara umum / Kondisi synoptik
+warning_desc: Peringatan dini cuaca buruk
+station_remark: Catatan tambahan dari stasiun
+wave_cat: Kategori gelombang (Tenang, Rendah, Sedang, Tinggi, Sangat Tinggi, Ekstrem, Sangat Ekstrem)
+wave_desc: Rentang rata-rata tinggi gelombang dalam meter
+wind_from: Arah angin - dari (Utara ,Utara Timur Laut, Timur Laut, Timur Timur Laut, Timur, Timur Tenggara, Tenggara, Selatan Tenggara, Selatan, Selatan Barat Daya, Barat Daya, Barat Barat daya, Barat, Barat Barat Laut, Barat Laut, Utara Barat Laut)
+wind_to: Arah angin - menuju (Utara ,Utara Timur Laut, Timur Laut, Timur Timur Laut, Timur, Timur Tenggara, Tenggara, Selatan Tenggara, Selatan, Selatan Barat Daya, Barat Daya, Barat Barat daya, Barat, Barat Barat Laut, Barat Laut, Utara Barat Laut)
+wind_speed_min: Kecepatan minimum angin dalam satuan knot
+wind_speed_max: Kecepatan maksimum angin dalam satuan knot
+
+
+
+
+DATA LINK API BMKG PETA MARITIM
+
+1. R.07 | Perairan Merauke
+https://peta-maritim.bmkg.go.id/public_api/perairan/R.07_Perairan%20Merauke.json
+
+2. I.07 | Perairan Gresik - Surabaya
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.07_Perairan%20Gresik%20-%20Surabaya.json
+
+3. N.02 | Laut Sulawesi bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.02_Laut%20Sulawesi%20bagian%20barat.json
+
+4. O.14 | Perairan timur Obi
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.14_Perairan%20timur%20Obi.json
+
+5. L.15 | Perairan P. Bonerate - Kalaotoa bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.15_Perairan%20P.%20Bonerate%20-%20Kalaotoa%20bagian%20selatan.json
+
+6. C.06 | Perairan timur Lampung bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/C.06_Perairan%20timur%20Lampung%20bagian%20selatan.json
+
+7. H.03 | Samudera Hindia selatan Jawa Barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/H.03_Samudera%20Hindia%20selatan%20Jawa%20Barat.json
+
+8. E.01 | Perairan Riau
+https://peta-maritim.bmkg.go.id/public_api/perairan/E.01_Perairan%20Riau.json
+
+9. U.04 | Samudera Hindia selatan Banten
+https://peta-maritim.bmkg.go.id/public_api/perairan/U.04_Samudera%20Hindia%20selatan%20Banten.json
+
+10. I.14 | Samudera Hindia selatan Jawa Timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.14_Samudera%20Hindia%20selatan%20Jawa%20Timur.json
+
+11. H.05 | Perairan Kebumen - Purworejo
+https://peta-maritim.bmkg.go.id/public_api/perairan/H.05_Perairan%20Kebumen%20-%20Purworejo.json
+
+12. E.02 | Perairan Kep. Batam
+https://peta-maritim.bmkg.go.id/public_api/perairan/E.02_Perairan%20Kep.%20Batam.json
+
+13. T.09 | Laut Banda selatan bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.09_Laut%20Banda%20selatan%20bagian%20timur.json
+
+14. O.11 | Teluk Weda
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.11_Teluk%20Weda.json
+
+15. T.10 | Perairan Kep. Sermata - Kep. Leti
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.10_Perairan%20Kep.%20Sermata%20-%20Kep.%20Leti.json
+
+16. K.05 | Selat Sumba bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.05_Selat%20Sumba%20bagian%20timur.json
+
+17. L.05 | Perairan Spermonde Makassar bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.05_Perairan%20Spermonde%20Makassar%20bagian%20barat.json
+
+18. I.06 | Perairan Tuban - Lamongan
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.06_Perairan%20Tuban%20-%20Lamongan.json
+
+19. I.03 | Laut Jawa bagian selatan Bawean
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.03_Laut%20Jawa%20bagian%20selatan%20Bawean.json
+
+20. T.06 | Laut Banda utara bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.06_Laut%20Banda%20utara%20bagian%20barat.json
+
+21. K.15 | Selat Wetar
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.15_Selat%20Wetar.json
+
+22. L.14 | Perairan P. Bonerate - Kalaotoa bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.14_Perairan%20P.%20Bonerate%20-%20Kalaotoa%20bagian%20utara.json
+
+23. O.02 | Samudera Pasifik utara Halmahera bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.02_Samudera%20Pasifik%20utara%20Halmahera%20bagian%20selatan.json
+
+24. M.05 | Perairan Sulawesi Barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/M.05_Perairan%20Sulawesi%20Barat.json
+
+25. A.02 | Selat Malaka bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/A.02_Selat%20Malaka%20bagian%20utara.json
+
+26. R.06 | Laut Arafuru bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/R.06_Laut%20Arafuru%20bagian%20timur.json
+
+27. K.07 | Laut Sawu bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.07_Laut%20Sawu%20bagian%20selatan.json
+
+28. T.08 | Laut Banda selatan bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.08_Laut%20Banda%20selatan%20bagian%20barat.json
+
+29. O.06 | Perairan Bacan
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.06_Perairan%20Bacan.json
+
+30. L.16 | Laut Flores bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.16_Laut%20Flores%20bagian%20timur.json
+
+31. O.13 | Perairan timur Halmahera
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.13_Perairan%20timur%20Halmahera.json
+
+32. M.09 | Perairan Kalimantan Utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/M.09_Perairan%20Kalimantan%20Utara.json
+
+33. Q.05 | Perairan selatan Biak
+https://peta-maritim.bmkg.go.id/public_api/perairan/Q.05_Perairan%20selatan%20Biak.json
+
+34. I.02 | Laut Jawa bagian utara Bawean
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.02_Laut%20Jawa%20bagian%20utara%20Bawean.json
+
+35. A.07 | Perairan Meulaboh - Kep. Sinabang
+https://peta-maritim.bmkg.go.id/public_api/perairan/A.07_Perairan%20Meulaboh%20-%20Kep.%20Sinabang.json
+
+36. S.02 | Perairan Banggai bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.02_Perairan%20Banggai%20bagian%20selatan.json
+
+37. H.06 | Perairan Yogyakarta
+https://peta-maritim.bmkg.go.id/public_api/perairan/H.06_Perairan%20Yogyakarta.json
+
+38. R.02 | Perairan Amamapare - Agats bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/R.02_Perairan%20Amamapare%20-%20Agats%20bagian%20selatan.json
+
+39. N.13 | Teluk Tomini bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.13_Teluk%20Tomini%20bagian%20barat.json
+
+40. R.08 | Laut Arafuru selatan Merauke
+https://peta-maritim.bmkg.go.id/public_api/perairan/R.08_Laut%20Arafuru%20selatan%20Merauke.json
+
+41. S.06 | Perairan Manui Kendari bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.06_Perairan%20Manui%20Kendari%20bagian%20timur.json
+
+42. G.05 | Perairan Pekalongan - Kendal
+https://peta-maritim.bmkg.go.id/public_api/perairan/G.05_Perairan%20Pekalongan%20-%20Kendal.json
+
+43. J.10 | Perairan utara Sumbawa
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.10_Perairan%20utara%20Sumbawa.json
+
+44. L.06 | Perairan Spermonde Makassar
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.06_Perairan%20Spermonde%20Makassar.json
+
+45. T.01 | Laut Seram bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.01_Laut%20Seram%20bagian%20barat.json
+
+46. K.13 | Perairan selatan Kupang - P. Rote
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.13_Perairan%20selatan%20Kupang%20-%20P.%20Rote.json
+
+47. M.07 | Selat Makassar bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/M.07_Selat%20Makassar%20bagian%20utara.json
+
+48. N.08 | Perairan Bitung - Likupang
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.08_Perairan%20Bitung%20-%20Likupang.json
+
+49. H.01 | Perairan Sukabumi - Cianjur
+https://peta-maritim.bmkg.go.id/public_api/perairan/H.01_Perairan%20Sukabumi%20-%20Cianjur.json
+
+50. F.01 | Selat Karimata bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/F.01_Selat%20Karimata%20bagian%20utara.json
+
+51. A.03 | Perairan Sabang - Banda Aceh
+https://peta-maritim.bmkg.go.id/public_api/perairan/A.03_Perairan%20Sabang%20-%20Banda%20Aceh.json
+
+52. S.07 | Laut Banda timur Sulawesi Tenggara bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.07_Laut%20Banda%20timur%20Sulawesi%20Tenggara%20bagian%20utara.json
+
+53. G.07 | Perairan Jepara
+https://peta-maritim.bmkg.go.id/public_api/perairan/G.07_Perairan%20Jepara.json
+
+54. A.01 | Perairan utara Sabang
+https://peta-maritim.bmkg.go.id/public_api/perairan/A.01_Perairan%20utara%20Sabang.json
+
+55. O.15 | Perairan Kep. Sula bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.15_Perairan%20Kep.%20Sula%20bagian%20utara.json
+
+56. T.14 | Perairan Kep. Kai
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.14_Perairan%20Kep.%20Kai.json
+
+57. A.05 | Selat Malaka bagian tengah
+https://peta-maritim.bmkg.go.id/public_api/perairan/A.05_Selat%20Malaka%20bagian%20tengah.json
+
+58. D.03 | Perairan utara Kep. Anambas
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.03_Perairan%20utara%20Kep.%20Anambas.json
+
+59. N.07 | Perairan Kep. Sitaro
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.07_Perairan%20Kep.%20Sitaro.json
+
+60. P.08 | Perairan Fak-Fak
+https://peta-maritim.bmkg.go.id/public_api/perairan/P.08_Perairan%20Fak-Fak.json
+
+61. C.04 | Teluk Lampung bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/C.04_Teluk%20Lampung%20bagian%20utara.json
+
+62. S.16 | Laut Banda timur Sulawesi Tenggara bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.16_Laut%20Banda%20timur%20Sulawesi%20Tenggara%20bagian%20selatan.json
+
+63. K.10 | Selat Alor - Pantar
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.10_Selat%20Alor%20-%20Pantar.json
+
+64. D.12 | Perairan Kendawangan
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.12_Perairan%20Kendawangan.json
+
+65. R.05 | Perairan Yos Sudarso bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/R.05_Perairan%20Yos%20Sudarso%20bagian%20selatan.json
+
+66. Q.02 | Perairan barat Biak
+https://peta-maritim.bmkg.go.id/public_api/perairan/Q.02_Perairan%20barat%20Biak.json
+
+67. F.10 | Perairan Karawang - Subang
+https://peta-maritim.bmkg.go.id/public_api/perairan/F.10_Perairan%20Karawang%20-%20Subang.json
+
+68. O.10 | Teluk Kau
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.10_Teluk%20Kau.json
+
+69. K.04 | Selat Sumba bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.04_Selat%20Sumba%20bagian%20barat.json
+
+70. S.04 | Perairan Teluk Tolo bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.04_Perairan%20Teluk%20Tolo%20bagian%20timur.json
+
+71. U.03 | Perairan selatan Banten
+https://peta-maritim.bmkg.go.id/public_api/perairan/U.03_Perairan%20selatan%20Banten.json
+
+72. M.08 | Perairan barat Sulawesi Tengah
+https://peta-maritim.bmkg.go.id/public_api/perairan/M.08_Perairan%20barat%20Sulawesi%20Tengah.json
+
+73. N.01 | Perairan utara Sulawesi Utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.01_Perairan%20utara%20Sulawesi%20Utara.json
+
+74. D.02 | Perairan selatan Kep. Anambas
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.02_Perairan%20selatan%20Kep.%20Anambas.json
+
+75. S.08 | Laut Banda timur Sulawesi Tengara bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.08_Laut%20Banda%20timur%20Sulawesi%20Tengara%20bagian%20timur.json
+
+76. J.07 | Selat Lombok bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.07_Selat%20Lombok%20bagian%20utara.json
+
+77. G.03 | Perairan Kep. Karimun Jawa
+https://peta-maritim.bmkg.go.id/public_api/perairan/G.03_Perairan%20Kep.%20Karimun%20Jawa.json
+
+78. S.01 | Perairan Banggai bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.01_Perairan%20Banggai%20bagian%20utara.json
+
+79. F.03 | Perairan utara P. Belitung
+https://peta-maritim.bmkg.go.id/public_api/perairan/F.03_Perairan%20utara%20P.%20Belitung.json
+
+80. J.03 | Selat Bali bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.03_Selat%20Bali%20bagian%20selatan.json
+
+81. B.03 | Perairan timur P. Siberut
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.03_Perairan%20timur%20P.%20Siberut.json
+
+82. T.13 | Laut Arafuru bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.13_Laut%20Arafuru%20bagian%20barat.json
+
+83. A.06 | Perairan barat Aceh
+https://peta-maritim.bmkg.go.id/public_api/perairan/A.06_Perairan%20barat%20Aceh.json
+
+84. S.15 | Perairan selatan Wakatobi bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.15_Perairan%20selatan%20Wakatobi%20bagian%20timur.json
+
+85. T.15 | Perairan Kep. Aru
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.15_Perairan%20Kep.%20Aru.json
+
+86. U.01 | Selat Sunda bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/U.01_Selat%20Sunda%20bagian%20utara.json
+
+87. I.11 | Selat Madura bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.11_Selat%20Madura%20bagian%20barat.json
+
+88. K.14 | Samudera Hindia selatan Kupang - P. Rote
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.14_Samudera%20Hindia%20selatan%20Kupang%20-%20P.%20Rote.json
+
+89. K.03 | Selat Sape bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.03_Selat%20Sape%20bagian%20selatan.json
+
+90. Q.06 | Teluk Cenderawasih
+https://peta-maritim.bmkg.go.id/public_api/perairan/Q.06_Teluk%20Cenderawasih.json
+
+91. H.04 | Perairan Cilacap
+https://peta-maritim.bmkg.go.id/public_api/perairan/H.04_Perairan%20Cilacap.json
+
+92. O.09 | Perairan Morotai bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.09_Perairan%20Morotai%20bagian%20selatan.json
+
+93. P.03 | Perairan Manokwari
+https://peta-maritim.bmkg.go.id/public_api/perairan/P.03_Perairan%20Manokwari.json
+
+94. I.08 | Perairan utara Madura
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.08_Perairan%20utara%20Madura.json
+
+95. P.07 | Teluk Bintuni
+https://peta-maritim.bmkg.go.id/public_api/perairan/P.07_Teluk%20Bintuni.json
+
+96. O.03 | Perairan Halmahera Barat bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.03_Perairan%20Halmahera%20Barat%20bagian%20utara.json
+
+97. L.09 | Teluk Bone bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.09_Teluk%20Bone%20bagian%20utara.json
+
+98. F.09 | Teluk Jakarta
+https://peta-maritim.bmkg.go.id/public_api/perairan/F.09_Teluk%20Jakarta.json
+
+99. I.10 | Perairan Kep. Kangean
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.10_Perairan%20Kep.%20Kangean.json
+
+100. C.05 | Samudera Hindia barat Lampung
+https://peta-maritim.bmkg.go.id/public_api/perairan/C.05_Samudera%20Hindia%20barat%20Lampung.json
+
+101. B.12 | Samudera Hindia barat Bengkulu
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.12_Samudera%20Hindia%20barat%20Bengkulu.json
+
+102. D.05 | Perairan utara Kep. Natuna
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.05_Perairan%20utara%20Kep.%20Natuna.json
+
+103. F.02 | Selat Gelasa
+https://peta-maritim.bmkg.go.id/public_api/perairan/F.02_Selat%20Gelasa.json
+
+104. K.08 | Samudera Hindia selatan P. Sumba - P. Sabu
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.08_Samudera%20Hindia%20selatan%20P.%20Sumba%20-%20P.%20Sabu.json
+
+105. J.12 | Samudera Hindia selatan NTB
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.12_Samudera%20Hindia%20selatan%20NTB.json
+
+106. L.11 | Perairan timur Kep. Selayar
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.11_Perairan%20timur%20Kep.%20Selayar.json
+
+107. B.11 | Perairan timur P. Enggano
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.11_Perairan%20timur%20P.%20Enggano.json
+
+108. B.09 | Samudera Hindia barat Kep. Mentawai
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.09_Samudera%20Hindia%20barat%20Kep.%20Mentawai.json
+
+109. P.02 | Perairan Raja Ampat bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/P.02_Perairan%20Raja%20Ampat%20bagian%20utara.json
+
+110. I.09 | Perairan Kep. Sapudi
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.09_Perairan%20Kep.%20Sapudi.json
+
+111. B.06 | Perairan barat P. Pagai
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.06_Perairan%20barat%20P.%20Pagai.json
+
+112. J.08 | Laut Sumbawa
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.08_Laut%20Sumbawa.json
+
+113. H.07 | Samudera Hindia selatan Jawa Tengah
+https://peta-maritim.bmkg.go.id/public_api/perairan/H.07_Samudera%20Hindia%20selatan%20Jawa%20Tengah.json
+
+114. D.04 | Perairan barat Kep. Natuna
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.04_Perairan%20barat%20Kep.%20Natuna.json
+
+115. R.03 | Laut Arafuru timur Kepulauan Aru
+https://peta-maritim.bmkg.go.id/public_api/perairan/R.03_Laut%20Arafuru%20timur%20Kepulauan%20Aru.json
+
+116. K.02 | Selat Sape bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.02_Selat%20Sape%20bagian%20utara.json
+
+117. P.06 | Perairan Sorong bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/P.06_Perairan%20Sorong%20bagian%20selatan.json
+
+118. B.05 | Perairan timur P. Pagai
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.05_Perairan%20timur%20P.%20Pagai.json
+
+119. O.04 | Perairan Kep. Loloda
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.04_Perairan%20Kep.%20Loloda.json
+
+120. J.05 | Selat Lombok bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.05_Selat%20Lombok%20bagian%20selatan.json
+
+121. S.03 | Perairan Teluk Tolo bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.03_Perairan%20Teluk%20Tolo%20bagian%20barat.json
+
+122. K.11 | Selat Ombai
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.11_Selat%20Ombai.json
+
+123. B.10 | Perairan barat Bengkulu
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.10_Perairan%20barat%20Bengkulu.json
+
+124. F.11 | Perairan Indramayu - Cirebon
+https://peta-maritim.bmkg.go.id/public_api/perairan/F.11_Perairan%20Indramayu%20-%20Cirebon.json
+
+125. D.10 | Perairan Pontianak - Mempawah
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.10_Perairan%20Pontianak%20-%20Mempawah.json
+
+126. M.01 | Perairan Kota Baru bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/M.01_Perairan%20Kota%20Baru%20bagian%20barat.json
+
+127. F.04 | Perairan selatan P. Belitung
+https://peta-maritim.bmkg.go.id/public_api/perairan/F.04_Perairan%20selatan%20P.%20Belitung.json
+
+128. Q.03 | Perairan utara Biak
+https://peta-maritim.bmkg.go.id/public_api/perairan/Q.03_Perairan%20utara%20Biak.json
+
+129. C.08 | Selat Bangka bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/C.08_Selat%20Bangka%20bagian%20selatan.json
+
+130. B.01 | Perairan barat Sumatera Barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.01_Perairan%20barat%20Sumatera%20Barat.json
+
+131. T.12 | Perairan Kep. Tanimbar
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.12_Perairan%20Kep.%20Tanimbar.json
+
+132. J.09 | Selat Alas bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.09_Selat%20Alas%20bagian%20utara.json
+
+133. E.05 | Selat Berhala
+https://peta-maritim.bmkg.go.id/public_api/perairan/E.05_Selat%20Berhala.json
+
+134. F.06 | Laut Jawa bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/F.06_Laut%20Jawa%20bagian%20barat.json
+
+135. A.08 | Samudera Hindia barat Aceh
+https://peta-maritim.bmkg.go.id/public_api/perairan/A.08_Samudera%20Hindia%20barat%20Aceh.json
+
+136. F.08 | Perairan Kep. Seribu
+https://peta-maritim.bmkg.go.id/public_api/perairan/F.08_Perairan%20Kep.%20Seribu.json
+
+137. S.14 | Perairan selatan Wakatobi bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.14_Perairan%20selatan%20Wakatobi%20bagian%20barat.json
+
+138. S.11 | Perairan Bau-bau bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.11_Perairan%20Bau-bau%20bagian%20selatan.json
+
+139. I.05 | Laut Jawa bagian timur Masalembo
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.05_Laut%20Jawa%20bagian%20timur%20Masalembo.json
+
+140. K.12 | Perairan utara Kupang - P. Rote
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.12_Perairan%20utara%20Kupang%20-%20P.%20Rote.json
+
+141. T.05 | Perairan selatan P. Seram
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.05_Perairan%20selatan%20P.%20Seram.json
+
+142. O.12 | Laut Halmahera
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.12_Laut%20Halmahera.json
+
+143. T.16 | Laut Arafuru bagian tengah
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.16_Laut%20Arafuru%20bagian%20tengah.json
+
+144. T.11 | Perairan Kep. Babar
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.11_Perairan%20Kep.%20Babar.json
+
+145. K.01 | Perairan utara Flores
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.01_Perairan%20utara%20Flores.json
+
+146. N.11 | Perairan selatan Sulawesi Utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.11_Perairan%20selatan%20Sulawesi%20Utara.json
+
+147. M.03 | Perairan Balikpapan
+https://peta-maritim.bmkg.go.id/public_api/perairan/M.03_Perairan%20Balikpapan.json
+
+148. L.13 | Laut Flores bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.13_Laut%20Flores%20bagian%20barat.json
+
+149. N.03 | Laut Sulawesi bagian tengah
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.03_Laut%20Sulawesi%20bagian%20tengah.json
+
+150. L.03 | Perairan Spermonde Pangkep bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.03_Perairan%20Spermonde%20Pangkep%20bagian%20barat.json
+
+151. A.09 | Perairan Kep. Nias - Sibolga
+https://peta-maritim.bmkg.go.id/public_api/perairan/A.09_Perairan%20Kep.%20Nias%20-%20Sibolga.json
+
+152. P.09 | Perairan Kaimana
+https://peta-maritim.bmkg.go.id/public_api/perairan/P.09_Perairan%20Kaimana.json
+
+153. C.01 | Perairan barat Lampung
+https://peta-maritim.bmkg.go.id/public_api/perairan/C.01_Perairan%20barat%20Lampung.json
+
+154. I.13 | Perairan selatan Jawa Timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.13_Perairan%20selatan%20Jawa%20Timur.json
+
+155. K.06 | Laut Sawu bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.06_Laut%20Sawu%20bagian%20utara.json
+
+156. T.04 | Perairan P. Ambon - Kep. Lease
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.04_Perairan%20P.%20Ambon%20-%20Kep.%20Lease.json
+
+157. P.01 | Samudera Pasifik utara Papua Barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/P.01_Samudera%20Pasifik%20utara%20Papua%20Barat.json
+
+158. D.01 | Laut Natuna Utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.01_Laut%20Natuna%20Utara.json
+
+159. L.01 | Selat Makassar bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.01_Selat%20Makassar%20bagian%20selatan.json
+
+160. S.12 | Perairan utara Wakatobi bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.12_Perairan%20utara%20Wakatobi%20bagian%20barat.json
+
+161. B.04 | Perairan timur P. Sipora
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.04_Perairan%20timur%20P.%20Sipora.json
+
+162. J.11 | Selat Alas bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.11_Selat%20Alas%20bagian%20selatan.json
+
+163. N.04 | Laut Sulawesi bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.04_Laut%20Sulawesi%20bagian%20timur.json
+
+164. J.01 | Laut Bali
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.01_Laut%20Bali.json
+
+165. T.03 | Perairan P. Buru
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.03_Perairan%20P.%20Buru.json
+
+166. D.11 | Perairan Ketapang
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.11_Perairan%20Ketapang.json
+
+167. U.02 | Selat Sunda bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/U.02_Selat%20Sunda%20bagian%20selatan.json
+
+168. D.13 | Perairan Kepulauan Karimata
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.13_Perairan%20Kepulauan%20Karimata.json
+
+169. N.12 | Teluk Tomini bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.12_Teluk%20Tomini%20bagian%20timur.json
+
+170. T.02 | Laut Seram bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.02_Laut%20Seram%20bagian%20timur.json
+
+171. O.07 | Perairan Obi
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.07_Perairan%20Obi.json
+
+172. G.08 | Perairan Pati - Rembang
+https://peta-maritim.bmkg.go.id/public_api/perairan/G.08_Perairan%20Pati%20-%20Rembang.json
+
+173. T.07 | Laut Banda utara bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/T.07_Laut%20Banda%20utara%20bagian%20timur.json
+
+174. H.02 | Perairan Garut - Pangandaran
+https://peta-maritim.bmkg.go.id/public_api/perairan/H.02_Perairan%20Garut%20-%20Pangandaran.json
+
+175. J.06 | Samudera Hindia selatan Bali
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.06_Samudera%20Hindia%20selatan%20Bali.json
+
+176. P.05 | Perairan Misool
+https://peta-maritim.bmkg.go.id/public_api/perairan/P.05_Perairan%20Misool.json
+
+177. C.07 | Perairan timur Lampung bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/C.07_Perairan%20timur%20Lampung%20bagian%20utara.json
+
+178. L.04 | Perairan Spermonde Pangkep
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.04_Perairan%20Spermonde%20Pangkep.json
+
+179. N.10 | Laut Maluku bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.10_Laut%20Maluku%20bagian%20selatan.json
+
+180. O.01 | Samudera Pasifik utara Halmahera bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.01_Samudera%20Pasifik%20utara%20Halmahera%20bagian%20utara.json
+
+181. G.01 | Perairan Kalimantan Tengah bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/G.01_Perairan%20Kalimantan%20Tengah%20bagian%20barat.json
+
+182. G.04 | Perairan Brebes - Pemalang
+https://peta-maritim.bmkg.go.id/public_api/perairan/G.04_Perairan%20Brebes%20-%20Pemalang.json
+
+183. L.12 | Laut Flores bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.12_Laut%20Flores%20bagian%20utara.json
+
+184. D.08 | Laut Natuna
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.08_Laut%20Natuna.json
+
+185. D.06 | Perairan selatan Kep. Natuna - Pulau Midai
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.06_Perairan%20selatan%20Kep.%20Natuna%20-%20Pulau%20Midai.json
+
+186. A.10 | Samudera Hindia barat Kep. Nias
+https://peta-maritim.bmkg.go.id/public_api/perairan/A.10_Samudera%20Hindia%20barat%20Kep.%20Nias.json
+
+187. I.01 | Perairan Kalimantan Tengah bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.01_Perairan%20Kalimantan%20Tengah%20bagian%20timur.json
+
+188. G.06 | Perairan Semarang - Demak
+https://peta-maritim.bmkg.go.id/public_api/perairan/G.06_Perairan%20Semarang%20-%20Demak.json
+
+189. R.04 | Perairan Yos Sudarso bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/R.04_Perairan%20Yos%20Sudarso%20bagian%20utara.json
+
+190. D.07 | Perairan Kep. Subi - Serasan
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.07_Perairan%20Kep.%20Subi%20-%20Serasan.json
+
+191. Q.01 | Samudera Pasifik utara Biak
+https://peta-maritim.bmkg.go.id/public_api/perairan/Q.01_Samudera%20Pasifik%20utara%20Biak.json
+
+192. N.09 | Laut Maluku bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.09_Laut%20Maluku%20bagian%20utara.json
+
+193. N.05 | Perairan Kep. Sangihe
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.05_Perairan%20Kep.%20Sangihe.json
+
+194. J.02 | Selat Bali bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.02_Selat%20Bali%20bagian%20utara.json
+
+195. E.03 | Perairan Kep. Bintan
+https://peta-maritim.bmkg.go.id/public_api/perairan/E.03_Perairan%20Kep.%20Bintan.json
+
+196. I.12 | Selat Madura bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.12_Selat%20Madura%20bagian%20timur.json
+
+197. O.16 | Perairan Kep. Sula bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.16_Perairan%20Kep.%20Sula%20bagian%20selatan.json
+
+198. E.04 | Perairan Kep. Lingga
+https://peta-maritim.bmkg.go.id/public_api/perairan/E.04_Perairan%20Kep.%20Lingga.json
+
+199. L.10 | Teluk Bone bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.10_Teluk%20Bone%20bagian%20selatan.json
+
+200. L.07 | Perairan barat Kep. Selayar
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.07_Perairan%20barat%20Kep.%20Selayar.json
+
+201. L.02 | Perairan Pare - pare
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.02_Perairan%20Pare%20-%20pare.json
+
+202. D.09 | Perairan Singkawang - Sambas
+https://peta-maritim.bmkg.go.id/public_api/perairan/D.09_Perairan%20Singkawang%20-%20Sambas.json
+
+203. S.05 | Perairan Manui Kendari bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.05_Perairan%20Manui%20Kendari%20bagian%20barat.json
+
+204. Q.04 | Perairan timur Biak
+https://peta-maritim.bmkg.go.id/public_api/perairan/Q.04_Perairan%20timur%20Biak.json
+
+205. N.06 | Perairan Kep. Talaud
+https://peta-maritim.bmkg.go.id/public_api/perairan/N.06_Perairan%20Kep.%20Talaud.json
+
+206. F.07 | Perairan utara Banten
+https://peta-maritim.bmkg.go.id/public_api/perairan/F.07_Perairan%20utara%20Banten.json
+
+207. S.10 | Perairan Bau-bau bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.10_Perairan%20Bau-bau%20bagian%20utara.json
+
+208. O.05 | Perairan Ternate - Batang Dua
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.05_Perairan%20Ternate%20-%20Batang%20Dua.json
+
+209. M.04 | Selat Makassar bagian tengah
+https://peta-maritim.bmkg.go.id/public_api/perairan/M.04_Selat%20Makassar%20bagian%20tengah.json
+
+210. Q.08 | Samudera Pasifik utara Jayapura
+https://peta-maritim.bmkg.go.id/public_api/perairan/Q.08_Samudera%20Pasifik%20utara%20Jayapura.json
+
+211. B.07 | Perairan barat P. Sipora
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.07_Perairan%20barat%20P.%20Sipora.json
+
+212. F.05 | Selat Karimata bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/F.05_Selat%20Karimata%20bagian%20selatan.json
+
+213. E.06 | Perairan utara P. Bangka
+https://peta-maritim.bmkg.go.id/public_api/perairan/E.06_Perairan%20utara%20P.%20Bangka.json
+
+214. R.01 | Perairan Amamapare - Agats bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/R.01_Perairan%20Amamapare%20-%20Agats%20bagian%20barat.json
+
+215. I.04 | Laut Jawa bagian barat Masalembo
+https://peta-maritim.bmkg.go.id/public_api/perairan/I.04_Laut%20Jawa%20bagian%20barat%20Masalembo.json
+
+216. A.04 | Perairan Lhokseumawe
+https://peta-maritim.bmkg.go.id/public_api/perairan/A.04_Perairan%20Lhokseumawe.json
+
+217. L.08 | Perairan Kep. Sabalana
+https://peta-maritim.bmkg.go.id/public_api/perairan/L.08_Perairan%20Kep.%20Sabalana.json
+
+218. K.09 | Selat Flores - Lamakera
+https://peta-maritim.bmkg.go.id/public_api/perairan/K.09_Selat%20Flores%20-%20Lamakera.json
+
+219. S.09 | Laut Banda timur Sulawesi Tenggara bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.09_Laut%20Banda%20timur%20Sulawesi%20Tenggara%20bagian%20barat.json
+
+220. G.02 | Laut Jawa bagian tengah
+https://peta-maritim.bmkg.go.id/public_api/perairan/G.02_Laut%20Jawa%20bagian%20tengah.json
+
+221. P.04 | Perairan Raja Ampat - Sorong
+https://peta-maritim.bmkg.go.id/public_api/perairan/P.04_Perairan%20Raja%20Ampat%20-%20Sorong.json
+
+222. C.02 | Selat Sunda bagian barat
+https://peta-maritim.bmkg.go.id/public_api/perairan/C.02_Selat%20Sunda%20bagian%20barat.json
+
+223. M.02 | Perairan Kota Baru bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/M.02_Perairan%20Kota%20Baru%20bagian%20timur.json
+
+224. B.08 | Perairan barat P. Siberut
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.08_Perairan%20barat%20P.%20Siberut.json
+
+225. B.02 | Perairan utara P. Siberut
+https://peta-maritim.bmkg.go.id/public_api/perairan/B.02_Perairan%20utara%20P.%20Siberut.json
+
+226. C.09 | Selat Bangka bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/C.09_Selat%20Bangka%20bagian%20utara.json
+
+227. S.13 | Perairan utara Wakatobi bagian timur
+https://peta-maritim.bmkg.go.id/public_api/perairan/S.13_Perairan%20utara%20Wakatobi%20bagian%20timur.json
+
+228. O.08 | Perairan Morotai bagian utara
+https://peta-maritim.bmkg.go.id/public_api/perairan/O.08_Perairan%20Morotai%20bagian%20utara.json
+
+229. M.06 | Perairan Samarinda - Bontang
+https://peta-maritim.bmkg.go.id/public_api/perairan/M.06_Perairan%20Samarinda%20-%20Bontang.json
+
+230. C.03 | Teluk Lampung bagian selatan
+https://peta-maritim.bmkg.go.id/public_api/perairan/C.03_Teluk%20Lampung%20bagian%20selatan.json
+
+231. Q.07 | Perairan Jayapura - Sarmi
+https://peta-maritim.bmkg.go.id/public_api/perairan/Q.07_Perairan%20Jayapura%20-%20Sarmi.json
+
+232. J.04 | Selat Badung
+https://peta-maritim.bmkg.go.id/public_api/perairan/J.04_Selat%20Badung.json
+

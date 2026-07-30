@@ -24,15 +24,32 @@ public class FishingMarkerRenderer extends DefaultClusterRenderer<FishingCluster
 
         if (type != null) {
             switch (type.toLowerCase()) {
-                case "pantai": hue = BitmapDescriptorFactory.HUE_AZURE; break;
-                case "muara": hue = BitmapDescriptorFactory.HUE_CYAN; break;
-                case "dermaga": hue = BitmapDescriptorFactory.HUE_BLUE; break;
-                case "sungai": hue = BitmapDescriptorFactory.HUE_GREEN; break;
-                case "danau": hue = BitmapDescriptorFactory.HUE_YELLOW; break;
-                case "tambak": hue = BitmapDescriptorFactory.HUE_VIOLET; break;
+                case "pantai": 
+                    hue = BitmapDescriptorFactory.HUE_AZURE; 
+                    break;
+                case "muara": 
+                    hue = BitmapDescriptorFactory.HUE_CYAN; 
+                    break;
+                case "dermaga": 
+                    hue = BitmapDescriptorFactory.HUE_BLUE; 
+                    break;
+                case "sungai": 
+                    hue = BitmapDescriptorFactory.HUE_GREEN; 
+                    break;
+                case "danau": 
+                    hue = BitmapDescriptorFactory.HUE_YELLOW; 
+                    break;
+                case "tambak": 
+                    hue = BitmapDescriptorFactory.HUE_VIOLET; 
+                    break;
+                default:
+                    hue = BitmapDescriptorFactory.HUE_ORANGE;
+                    break;
             }
         }
 
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(hue));
+        markerOptions.title(item.getData().getName());
+        markerOptions.snippet(item.getData().getType());
     }
 }

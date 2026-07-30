@@ -121,7 +121,7 @@ public class AuthRepository {
     public void forgotPassword(String email, MutableLiveData<String> result) {
         resetPassword(email).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                result.setValue("Email reset password telah dikirim.");
+                result.setValue("Email reset password telah dikirim. Cek Inbox atau folder Spam email Anda.");
             } else {
                 result.setValue(handleException(task.getException()));
             }

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,9 +25,13 @@ import com.example.java3.R;
 import com.example.java3.core.utils.Constants;
 import com.example.java3.data.remote.TideResponse;
 import com.example.java3.data.remote.WeatherResponse;
+import com.example.java3.data.remote.MarineHourlyResponse;
 import com.example.java3.databinding.FragmentHomeBinding;
+import com.example.java3.domain.model.BMKGForecast;
 import com.example.java3.domain.model.DashboardStats;
 import com.example.java3.domain.model.FishingPointWithRecommendation;
+import com.example.java3.domain.model.RecommendationResult;
+import com.example.java3.presentation.adapters.BMKGForecastAdapter;
 import com.example.java3.presentation.activities.SpotListActivity;
 import com.example.java3.presentation.adapters.FishingPointAdapter;
 import com.example.java3.presentation.viewmodels.HomeViewModel;
@@ -40,12 +45,18 @@ import java.util.List;
 import java.util.Locale;
 
 public class HomeFragment extends Fragment {
+    private static final String TAG = "HOME_LOCATION";
+    private static final long REFRESH_INTERVAL_MS = 60_000L;
+
     private FragmentHomeBinding binding;
     private HomeViewModel viewModel;
     private FishingPointAdapter adapter;
+    private BMKGForecastAdapter bmkgForecastAdapter;
     private FusedLocationProviderClient fusedLocationClient;
     private double currentLat = Constants.TANJUNG_ANOM_LAT;
     private double currentLon = Constants.TANJUNG_ANOM_LON;
+    private MarineHourlyResponse latestMarineHourly;
+    private long lastDashboardRefreshAt = 0L;
 
     private final ActivityResultLauncher<String[]> locationPermissionRequest =
             registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), result -> {
@@ -82,6 +93,11 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         binding.rvRecommendedSpots.setLayoutManager(layoutManager);
         binding.rvRecommendedSpots.setAdapter(adapter);
+
+        bmkgForecastAdapter = new BMKGForecastAdapter(new ArrayList<>());
+        LinearLayoutManager forecastLayoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+        binding.rvBmkgForecast.setLayoutManager(forecastLayoutManager);
+        binding.rvBmkgForecast.setAdapter(bmkgForecastAdapter);
     }
 
     private void observeViewModel() {
@@ -89,6 +105,7 @@ public class HomeFragment extends Fragment {
         viewModel.getLoadingLiveData().observe(getViewLifecycleOwner(), this::showLoadingState);
         viewModel.getWeatherLiveData().observe(getViewLifecycleOwner(), this::renderWeather);
         viewModel.getTideLiveData().observe(getViewLifecycleOwner(), this::renderTide);
+        viewModel.getMarineHourlyLiveData().observe(getViewLifecycleOwner(), this::renderMarineHourly);
         viewModel.getRecommendedSpotsLiveData().observe(getViewLifecycleOwner(), this::renderRecommendations);
         viewModel.getUnreadNotificationCountLiveData().observe(getViewLifecycleOwner(), this::renderNotificationCount);
         viewModel.getDashboardStatsLiveData().observe(getViewLifecycleOwner(), this::renderStats);
@@ -97,6 +114,10 @@ public class HomeFragment extends Fragment {
                 binding.tvRecommendationTitle.setText(message);
                 binding.progressRecommendation.setProgress(0);
                 binding.tvRecommendationPercent.setText("0%");
+                binding.tvSafetyScore.setText("Safety --");
+            binding.tvSafetyLabel.setText("Menunggu data");
+            binding.tvActivityScore.setText("Ikan --");
+            binding.tvActivityLabel.setText("Menunggu data");
             }
         });
         viewModel.getErrorLiveData().observe(getViewLifecycleOwner(), error -> {
@@ -116,7 +137,7 @@ public class HomeFragment extends Fragment {
                     : "Tidak ada notifikasi baru.";
             Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
         });
-        binding.weatherCard.setOnClickListener(v -> viewModel.refreshEnvironment());
+        binding.weatherCard.setOnClickListener(v -> loadDashboardFromDeviceLocation());
         binding.tvTideDetailLink.setOnClickListener(v -> showTideSummary());
         binding.recommendationCard.setOnClickListener(v -> openSpotList());
         binding.tvSeeAllSpots.setOnClickListener(v -> openSpotList());
@@ -140,35 +161,57 @@ public class HomeFragment extends Fragment {
             return;
         }
 
-        binding.tvLocationName.setText("Mendeteksi lokasi...");
-        fusedLocationClient.getLastLocation()
+        long now = System.currentTimeMillis();
+        if (now - lastDashboardRefreshAt < REFRESH_INTERVAL_MS) {
+            return;
+        }
+        lastDashboardRefreshAt = now;
+
+        if (binding != null) {
+            binding.tvLocationName.setText("Mendeteksi lokasi...");
+        }
+        
+        CancellationTokenSource tokenSource = new CancellationTokenSource();
+        fusedLocationClient.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, tokenSource.getToken())
                 .addOnSuccessListener(location -> {
+                    if (binding == null) return;
                     if (location != null) {
                         loadDashboard(location, "Lokasi Anda");
                     } else {
-                        requestFreshLocation();
+                        requestLastKnownLocation();
                     }
                 })
-                .addOnFailureListener(error -> loadFallbackLocation("GPS belum tersedia. Dashboard memakai lokasi default."));
+                .addOnFailureListener(error -> {
+                    if (binding == null) return;
+                    requestLastKnownLocation();
+                });
     }
 
     @SuppressLint("MissingPermission")
-    private void requestFreshLocation() {
-        CancellationTokenSource tokenSource = new CancellationTokenSource();
-        fusedLocationClient.getCurrentLocation(Priority.PRIORITY_BALANCED_POWER_ACCURACY, tokenSource.getToken())
+    private void requestLastKnownLocation() {
+        fusedLocationClient.getLastLocation()
                 .addOnSuccessListener(location -> {
+                    if (binding == null) return;
                     if (location != null) {
                         loadDashboard(location, "Lokasi Anda");
                     } else {
                         loadFallbackLocation("Lokasi belum ditemukan. Dashboard memakai lokasi default.");
                     }
                 })
-                .addOnFailureListener(error -> loadFallbackLocation("GPS gagal dimuat. Dashboard memakai lokasi default."));
+                .addOnFailureListener(error -> {
+                    if (binding == null) return;
+                    loadFallbackLocation("GPS gagal dimuat. Dashboard memakai lokasi default.");
+                });
     }
 
     private void loadDashboard(Location location, String locationName) {
+        if (binding == null) return;
         currentLat = location.getLatitude();
         currentLon = location.getLongitude();
+        Log.d(TAG, "dashboard location provider=" + location.getProvider()
+                + " lat=" + currentLat
+                + " lon=" + currentLon
+                + " mock=" + location.isFromMockProvider());
 
         // Emulator Fix: If location is Mountain View (Google HQ), force to Tanjung Anom
         if (Math.abs(currentLat - 37.42) < 0.1 && Math.abs(currentLon - (-122.08)) < 0.1) {
@@ -182,9 +225,22 @@ public class HomeFragment extends Fragment {
         viewModel.fetchData(currentLat, currentLon);
     }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (binding != null && hasLocationPermission()) {
+            loadDashboardFromDeviceLocation();
+        }
+    }
+
     private void loadFallbackLocation(String message) {
-        binding.tvLocationName.setText("Tanjung Anom (fallback)");
-        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
+        if (binding != null) {
+            binding.tvLocationName.setText("Tanjung Anom (fallback)");
+        }
+        if (getContext() != null) {
+            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
+        }
         viewModel.fetchData(Constants.TANJUNG_ANOM_LAT, Constants.TANJUNG_ANOM_LON);
     }
 
@@ -207,6 +263,8 @@ public class HomeFragment extends Fragment {
         binding.tvLowTideTime.setText("--:--");
         binding.tvLowTideHeight.setText("--");
         binding.tvCurrentTideStatus.setText("Memuat");
+        binding.waveHourlyChart.setWaveData(new ArrayList<>(), new ArrayList<>(), 0);
+        bmkgForecastAdapter.updateData(new ArrayList<>());
     }
 
     private void renderWeather(WeatherResponse weather) {
@@ -243,8 +301,11 @@ public class HomeFragment extends Fragment {
             binding.tvLowTideHeight.setText("--");
             binding.tvCurrentTideStatus.setText("Belum tersedia");
             binding.tvCurrentTideStatus.setTextColor(ContextCompat.getColor(requireContext(), R.color.text_secondary));
+            bmkgForecastAdapter.updateData(new ArrayList<>());
             return;
         }
+
+        renderBmkgForecasts(tide);
 
         binding.tvHighTideTime.setText(nonBlank(tide.getHighTide(), "--:--"));
         binding.tvLowTideTime.setText(nonBlank(tide.getLowTide(), "--:--"));
@@ -252,7 +313,7 @@ public class HomeFragment extends Fragment {
         binding.tvLowTideHeight.setText(nonBlank(tide.getBestFishingWindow(), "--"));
 
         String activity = nonBlank(tide.getFishingActivity(), "Normal");
-        binding.tvCurrentTideStatus.setText(activity);
+        binding.tvCurrentTideStatus.setText(toMarineStatusLabel(activity));
 
         if ("Excellent".equalsIgnoreCase(activity)) {
             binding.tvRecommendationStars.setText("\u2605\u2605\u2605\u2605\u2605");
@@ -263,6 +324,55 @@ public class HomeFragment extends Fragment {
         } else {
             binding.tvCurrentTideStatus.setTextColor(ContextCompat.getColor(requireContext(), R.color.text_primary));
         }
+        if (latestMarineHourly != null) {
+            renderMarineHourly(latestMarineHourly);
+        }
+    }
+
+    private void renderMarineHourly(MarineHourlyResponse marine) {
+        if (marine == null || binding == null) {
+            return;
+        }
+        latestMarineHourly = marine;
+        float currentWave = marine.getCurrentWaveHeight();
+        float maxWave = marine.getTodayMaxWaveHeight();
+        binding.waveHourlyChart.setWaveData(marine.getNext24WaveHeights(), marine.getNext24TimeLabels(), marine.getCurrentHourIndexInNext24());
+        if (currentWave > 0f) {
+            binding.tvHighTideTime.setText(marine.getWaveLabel());
+            binding.tvHighTideHeight.setText(String.format(Locale.getDefault(), "%.1f m", currentWave));
+            binding.tvWaveSource.setText(String.format(Locale.getDefault(),
+                    "Suhu laut %.0f C | arus %.1f m/s %s | sekarang %.1f m, maksimum %.1f m",
+                    marine.getCurrentSeaSurfaceTemperature(),
+                    marine.getCurrentOceanCurrentVelocity(),
+                    marine.getCurrentDirectionCompass(),
+                    currentWave,
+                    maxWave));
+        }
+        if (maxWave > 0f) {
+            binding.tvLowTideHeight.setText(String.format(Locale.getDefault(), "Maks %.1f m/24j", maxWave));
+        }
+    }
+
+    private void renderBmkgForecasts(TideResponse tide) {
+        List<BMKGForecast> forecasts = tide.getForecasts();
+        if (forecasts != null && !forecasts.isEmpty()) {
+            bmkgForecastAdapter.updateData(forecasts);
+            return;
+        }
+
+        BMKGForecast fallback = new BMKGForecast();
+        fallback.setTimeDesc(nonBlank(tide.getForecastTime(), "BMKG"));
+        fallback.setWeatherDesc(tide.getMarineSummary());
+        fallback.setWaveCategory(tide.getHighTide());
+        fallback.setWaveDescription(tide.getHighTide());
+        fallback.setWindFrom(tide.getWindFrom());
+        fallback.setWindTo(tide.getWindTo());
+        fallback.setWindSpeedMin(tide.getWindSpeedMin());
+        fallback.setWindSpeedMax(tide.getWindSpeedMax());
+        fallback.setWarning(tide.getWarningDesc());
+        List<BMKGForecast> fallbackList = new ArrayList<>();
+        fallbackList.add(fallback);
+        bmkgForecastAdapter.updateData(fallbackList);
     }
 
     private boolean hasUsableTideData(TideResponse tide) {
@@ -279,18 +389,58 @@ public class HomeFragment extends Fragment {
             binding.tvRecommendationTitle.setText("Belum ada spot rekomendasi");
             binding.progressRecommendation.setProgress(0);
             binding.tvRecommendationPercent.setText("0%");
+            binding.tvSafetyScore.setText("Safety --");
+            binding.tvSafetyLabel.setText("Menunggu data");
+            binding.tvActivityScore.setText("Ikan --");
+            binding.tvActivityLabel.setText("Menunggu data");
             return;
         }
 
         adapter.updateData(spots);
-        FishingPointWithRecommendation top = spots.get(0);
-        int score = top.getRecommendation().getScorePercentage();
-        binding.tvRecommendationTitle.setText(top.getRecommendation().getBadgeText());
+        FishingPointWithRecommendation top = findBestRecommendation(spots);
+        RecommendationResult result = top.getRecommendation();
+        int score = result.getScorePercentage();
+        binding.tvRecommendationTitle.setText(result.getBadgeText());
         binding.progressRecommendation.setProgress(score);
         binding.tvRecommendationPercent.setText(String.format(Locale.getDefault(), "%d%%", score));
-        binding.tvRecommendationStars.setText(createStars(top.getRecommendation().getStars()));
+        binding.tvRecommendationStars.setText(createStars(result.getStars()));
+        binding.tvRecommendationSubtitle.setText(getRecommendationSubtitle(score));
+        renderRecommendationInsights(result);
     }
 
+    private FishingPointWithRecommendation findBestRecommendation(List<FishingPointWithRecommendation> spots) {
+        FishingPointWithRecommendation best = spots.get(0);
+        for (FishingPointWithRecommendation spot : spots) {
+            if (spot.getRecommendation().getScore() > best.getRecommendation().getScore()) {
+                best = spot;
+            }
+        }
+        return best;
+    }
+
+    private void renderRecommendationInsights(RecommendationResult result) {
+        int safetyPercent = (int) Math.round(Math.max(0.0, Math.min(1.0, result.getSafetyMultiplier())) * 100.0);
+        int activityPercent = (int) Math.round(Math.max(0.0, Math.min(100.0, result.getActivityScore())));
+        binding.tvSafetyScore.setText(String.format(Locale.getDefault(), "Safe %d%%", safetyPercent));
+        binding.tvSafetyLabel.setText(getSafetyLabel(safetyPercent));
+        binding.tvActivityScore.setText(String.format(Locale.getDefault(), "Ikan %d%%", activityPercent));
+        binding.tvActivityLabel.setText(getActivityLabel(activityPercent));
+    }
+
+    private String getSafetyLabel(int score) {
+        if (score >= 90) return "Aman";
+        if (score >= 75) return "Cukup Aman";
+        if (score >= 55) return "Waspada";
+        if (score >= 40) return "Berisiko";
+        return "Tidak aman";
+    }
+
+    private String getActivityLabel(int score) {
+        if (score >= 85) return "Tinggi";
+        if (score >= 70) return "Baik";
+        if (score >= 55) return "Cukup";
+        return "Rendah";
+    }
     private void renderNotificationCount(Integer count) {
         int unreadCount = count != null ? count : 0;
         binding.btnNotification.setContentDescription(
@@ -315,11 +465,21 @@ public class HomeFragment extends Fragment {
     private void showTideSummary() {
         TideResponse tide = viewModel.getTideLiveData().getValue();
         if (tide == null) {
-            Toast.makeText(requireContext(), "Data pasang surut belum tersedia.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), "Data perairan BMKG belum tersedia.", Toast.LENGTH_SHORT).show();
             return;
         }
-        String message = "Pasang " + nonBlank(tide.getHighTide(), "--:--")
-                + " | Surut " + nonBlank(tide.getLowTide(), "--:--");
+        String message = "Gelombang " + nonBlank(tide.getHighTide(), "--")
+                + " | " + nonBlank(tide.getLowTide(), "Angin --");
+        MarineHourlyResponse marine = viewModel.getMarineHourlyLiveData().getValue();
+        if (marine != null && marine.getCurrentWaveHeight() > 0f) {
+            message = String.format(Locale.getDefault(),
+                    "Gelombang hourly %.1f m (%s), suhu laut %.0f C, arus %.1f m/s %s",
+                    marine.getCurrentWaveHeight(),
+                    marine.getWaveLabel(),
+                    marine.getCurrentSeaSurfaceTemperature(),
+                    marine.getCurrentOceanCurrentVelocity(),
+                    marine.getCurrentDirectionCompass());
+        }
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
     }
 
@@ -342,6 +502,31 @@ public class HomeFragment extends Fragment {
         return stars.toString();
     }
 
+    private String getRecommendationSubtitle(int score) {
+        if (score >= 90) {
+            return "Kondisi sangat mendukung untuk memancing hari ini.";
+        }
+        if (score >= 75) {
+            return "Kondisi cukup aman dan layak untuk memancing.";
+        }
+        if (score >= 60) {
+            return "Kondisi masih bisa dicoba dengan persiapan.";
+        }
+        if (score >= 40) {
+            return "Perhatikan cuaca, angin, dan gelombang sebelum berangkat.";
+        }
+        return "Kondisi kurang mendukung untuk aktivitas memancing.";
+    }
+
+    private String toMarineStatusLabel(String activity) {
+        if ("Excellent".equalsIgnoreCase(activity)) return "Sangat Baik";
+        if ("Good".equalsIgnoreCase(activity)) return "Baik";
+        if ("Fair".equalsIgnoreCase(activity)) return "Cukup";
+        if ("Poor".equalsIgnoreCase(activity)) return "Waspada";
+        if ("Very Poor".equalsIgnoreCase(activity)) return "Tidak Aman";
+        return activity;
+    }
+
     private String capitalize(String value) {
         if (value == null || value.trim().isEmpty()) {
             return "Cuaca tidak diketahui";
@@ -360,12 +545,12 @@ public class HomeFragment extends Fragment {
 
     private void renderErrorState(String error) {
         String lowerError = error.toLowerCase(Locale.ROOT);
-        if (lowerError.contains("tide") || lowerError.contains("pasang")) {
+        if (lowerError.contains("tide") || lowerError.contains("pasang") || lowerError.contains("bmkg") || lowerError.contains("maritim")) {
             binding.tvHighTideTime.setText("--:--");
             binding.tvHighTideHeight.setText("--");
             binding.tvLowTideTime.setText("--:--");
             binding.tvLowTideHeight.setText("--");
-            binding.tvCurrentTideStatus.setText("Layanan API");
+            binding.tvCurrentTideStatus.setText("Layanan BMKG");
             binding.tvCurrentTideStatus.setTextColor(ContextCompat.getColor(requireContext(), R.color.primary));
         }
 

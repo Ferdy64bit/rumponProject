@@ -27,7 +27,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "OPEN_WEATHER_API_KEY", "\"${localProperty("OPEN_WEATHER_API_KEY")}\"")
-        buildConfigField("String", "TIDE_API_KEY", "\"${localProperty("TIDE_API_KEY")}\"")
         manifestPlaceholders["GOOGLE_MAPS_API_KEY"] = localProperty("GOOGLE_MAPS_API_KEY")
     }
 
@@ -69,7 +68,6 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
-    implementation(libs.firebase.storage)
     implementation(libs.play.services.auth)
 
     // Image Loading
@@ -85,6 +83,7 @@ dependencies {
     annotationProcessor(libs.room.compiler)
 
     testImplementation(libs.junit)
+    testImplementation("org.robolectric:robolectric:4.12.2")
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
 }

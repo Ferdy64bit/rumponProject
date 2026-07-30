@@ -1,0 +1,1162 @@
+﻿[
+    {
+        "code":  "R.07",
+        "area":  "Perairan Merauke",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/R.07_Perairan%20Merauke.json"
+    },
+    {
+        "code":  "I.07",
+        "area":  "Perairan Gresik - Surabaya",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.07_Perairan%20Gresik%20-%20Surabaya.json"
+    },
+    {
+        "code":  "N.02",
+        "area":  "Laut Sulawesi bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.02_Laut%20Sulawesi%20bagian%20barat.json"
+    },
+    {
+        "code":  "O.14",
+        "area":  "Perairan timur Obi",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.14_Perairan%20timur%20Obi.json"
+    },
+    {
+        "code":  "L.15",
+        "area":  "Perairan P. Bonerate - Kalaotoa bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.15_Perairan%20P.%20Bonerate%20-%20Kalaotoa%20bagian%20selatan.json"
+    },
+    {
+        "code":  "C.06",
+        "area":  "Perairan timur Lampung bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/C.06_Perairan%20timur%20Lampung%20bagian%20selatan.json"
+    },
+    {
+        "code":  "H.03",
+        "area":  "Samudera Hindia selatan Jawa Barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/H.03_Samudera%20Hindia%20selatan%20Jawa%20Barat.json"
+    },
+    {
+        "code":  "E.01",
+        "area":  "Perairan Riau",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/E.01_Perairan%20Riau.json"
+    },
+    {
+        "code":  "U.04",
+        "area":  "Samudera Hindia selatan Banten",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/U.04_Samudera%20Hindia%20selatan%20Banten.json"
+    },
+    {
+        "code":  "I.14",
+        "area":  "Samudera Hindia selatan Jawa Timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.14_Samudera%20Hindia%20selatan%20Jawa%20Timur.json"
+    },
+    {
+        "code":  "H.05",
+        "area":  "Perairan Kebumen - Purworejo",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/H.05_Perairan%20Kebumen%20-%20Purworejo.json"
+    },
+    {
+        "code":  "E.02",
+        "area":  "Perairan Kep. Batam",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/E.02_Perairan%20Kep.%20Batam.json"
+    },
+    {
+        "code":  "T.09",
+        "area":  "Laut Banda selatan bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.09_Laut%20Banda%20selatan%20bagian%20timur.json"
+    },
+    {
+        "code":  "O.11",
+        "area":  "Teluk Weda",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.11_Teluk%20Weda.json"
+    },
+    {
+        "code":  "T.10",
+        "area":  "Perairan Kep. Sermata - Kep. Leti",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.10_Perairan%20Kep.%20Sermata%20-%20Kep.%20Leti.json"
+    },
+    {
+        "code":  "K.05",
+        "area":  "Selat Sumba bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.05_Selat%20Sumba%20bagian%20timur.json"
+    },
+    {
+        "code":  "L.05",
+        "area":  "Perairan Spermonde Makassar bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.05_Perairan%20Spermonde%20Makassar%20bagian%20barat.json"
+    },
+    {
+        "code":  "I.06",
+        "area":  "Perairan Tuban - Lamongan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.06_Perairan%20Tuban%20-%20Lamongan.json"
+    },
+    {
+        "code":  "I.03",
+        "area":  "Laut Jawa bagian selatan Bawean",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.03_Laut%20Jawa%20bagian%20selatan%20Bawean.json"
+    },
+    {
+        "code":  "T.06",
+        "area":  "Laut Banda utara bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.06_Laut%20Banda%20utara%20bagian%20barat.json"
+    },
+    {
+        "code":  "K.15",
+        "area":  "Selat Wetar",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.15_Selat%20Wetar.json"
+    },
+    {
+        "code":  "L.14",
+        "area":  "Perairan P. Bonerate - Kalaotoa bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.14_Perairan%20P.%20Bonerate%20-%20Kalaotoa%20bagian%20utara.json"
+    },
+    {
+        "code":  "O.02",
+        "area":  "Samudera Pasifik utara Halmahera bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.02_Samudera%20Pasifik%20utara%20Halmahera%20bagian%20selatan.json"
+    },
+    {
+        "code":  "M.05",
+        "area":  "Perairan Sulawesi Barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/M.05_Perairan%20Sulawesi%20Barat.json"
+    },
+    {
+        "code":  "A.02",
+        "area":  "Selat Malaka bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/A.02_Selat%20Malaka%20bagian%20utara.json"
+    },
+    {
+        "code":  "R.06",
+        "area":  "Laut Arafuru bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/R.06_Laut%20Arafuru%20bagian%20timur.json"
+    },
+    {
+        "code":  "K.07",
+        "area":  "Laut Sawu bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.07_Laut%20Sawu%20bagian%20selatan.json"
+    },
+    {
+        "code":  "T.08",
+        "area":  "Laut Banda selatan bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.08_Laut%20Banda%20selatan%20bagian%20barat.json"
+    },
+    {
+        "code":  "O.06",
+        "area":  "Perairan Bacan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.06_Perairan%20Bacan.json"
+    },
+    {
+        "code":  "L.16",
+        "area":  "Laut Flores bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.16_Laut%20Flores%20bagian%20timur.json"
+    },
+    {
+        "code":  "O.13",
+        "area":  "Perairan timur Halmahera",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.13_Perairan%20timur%20Halmahera.json"
+    },
+    {
+        "code":  "M.09",
+        "area":  "Perairan Kalimantan Utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/M.09_Perairan%20Kalimantan%20Utara.json"
+    },
+    {
+        "code":  "Q.05",
+        "area":  "Perairan selatan Biak",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/Q.05_Perairan%20selatan%20Biak.json"
+    },
+    {
+        "code":  "I.02",
+        "area":  "Laut Jawa bagian utara Bawean",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.02_Laut%20Jawa%20bagian%20utara%20Bawean.json"
+    },
+    {
+        "code":  "A.07",
+        "area":  "Perairan Meulaboh - Kep. Sinabang",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/A.07_Perairan%20Meulaboh%20-%20Kep.%20Sinabang.json"
+    },
+    {
+        "code":  "S.02",
+        "area":  "Perairan Banggai bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.02_Perairan%20Banggai%20bagian%20selatan.json"
+    },
+    {
+        "code":  "H.06",
+        "area":  "Perairan Yogyakarta",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/H.06_Perairan%20Yogyakarta.json"
+    },
+    {
+        "code":  "R.02",
+        "area":  "Perairan Amamapare - Agats bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/R.02_Perairan%20Amamapare%20-%20Agats%20bagian%20selatan.json"
+    },
+    {
+        "code":  "N.13",
+        "area":  "Teluk Tomini bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.13_Teluk%20Tomini%20bagian%20barat.json"
+    },
+    {
+        "code":  "R.08",
+        "area":  "Laut Arafuru selatan Merauke",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/R.08_Laut%20Arafuru%20selatan%20Merauke.json"
+    },
+    {
+        "code":  "S.06",
+        "area":  "Perairan Manui Kendari bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.06_Perairan%20Manui%20Kendari%20bagian%20timur.json"
+    },
+    {
+        "code":  "G.05",
+        "area":  "Perairan Pekalongan - Kendal",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/G.05_Perairan%20Pekalongan%20-%20Kendal.json"
+    },
+    {
+        "code":  "J.10",
+        "area":  "Perairan utara Sumbawa",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.10_Perairan%20utara%20Sumbawa.json"
+    },
+    {
+        "code":  "L.06",
+        "area":  "Perairan Spermonde Makassar",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.06_Perairan%20Spermonde%20Makassar.json"
+    },
+    {
+        "code":  "T.01",
+        "area":  "Laut Seram bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.01_Laut%20Seram%20bagian%20barat.json"
+    },
+    {
+        "code":  "K.13",
+        "area":  "Perairan selatan Kupang - P. Rote",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.13_Perairan%20selatan%20Kupang%20-%20P.%20Rote.json"
+    },
+    {
+        "code":  "M.07",
+        "area":  "Selat Makassar bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/M.07_Selat%20Makassar%20bagian%20utara.json"
+    },
+    {
+        "code":  "N.08",
+        "area":  "Perairan Bitung - Likupang",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.08_Perairan%20Bitung%20-%20Likupang.json"
+    },
+    {
+        "code":  "H.01",
+        "area":  "Perairan Sukabumi - Cianjur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/H.01_Perairan%20Sukabumi%20-%20Cianjur.json"
+    },
+    {
+        "code":  "F.01",
+        "area":  "Selat Karimata bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/F.01_Selat%20Karimata%20bagian%20utara.json"
+    },
+    {
+        "code":  "A.03",
+        "area":  "Perairan Sabang - Banda Aceh",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/A.03_Perairan%20Sabang%20-%20Banda%20Aceh.json"
+    },
+    {
+        "code":  "S.07",
+        "area":  "Laut Banda timur Sulawesi Tenggara bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.07_Laut%20Banda%20timur%20Sulawesi%20Tenggara%20bagian%20utara.json"
+    },
+    {
+        "code":  "G.07",
+        "area":  "Perairan Jepara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/G.07_Perairan%20Jepara.json"
+    },
+    {
+        "code":  "A.01",
+        "area":  "Perairan utara Sabang",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/A.01_Perairan%20utara%20Sabang.json"
+    },
+    {
+        "code":  "O.15",
+        "area":  "Perairan Kep. Sula bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.15_Perairan%20Kep.%20Sula%20bagian%20utara.json"
+    },
+    {
+        "code":  "T.14",
+        "area":  "Perairan Kep. Kai",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.14_Perairan%20Kep.%20Kai.json"
+    },
+    {
+        "code":  "A.05",
+        "area":  "Selat Malaka bagian tengah",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/A.05_Selat%20Malaka%20bagian%20tengah.json"
+    },
+    {
+        "code":  "D.03",
+        "area":  "Perairan utara Kep. Anambas",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.03_Perairan%20utara%20Kep.%20Anambas.json"
+    },
+    {
+        "code":  "N.07",
+        "area":  "Perairan Kep. Sitaro",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.07_Perairan%20Kep.%20Sitaro.json"
+    },
+    {
+        "code":  "P.08",
+        "area":  "Perairan Fak-Fak",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/P.08_Perairan%20Fak-Fak.json"
+    },
+    {
+        "code":  "C.04",
+        "area":  "Teluk Lampung bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/C.04_Teluk%20Lampung%20bagian%20utara.json"
+    },
+    {
+        "code":  "S.16",
+        "area":  "Laut Banda timur Sulawesi Tenggara bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.16_Laut%20Banda%20timur%20Sulawesi%20Tenggara%20bagian%20selatan.json"
+    },
+    {
+        "code":  "K.10",
+        "area":  "Selat Alor - Pantar",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.10_Selat%20Alor%20-%20Pantar.json"
+    },
+    {
+        "code":  "D.12",
+        "area":  "Perairan Kendawangan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.12_Perairan%20Kendawangan.json"
+    },
+    {
+        "code":  "R.05",
+        "area":  "Perairan Yos Sudarso bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/R.05_Perairan%20Yos%20Sudarso%20bagian%20selatan.json"
+    },
+    {
+        "code":  "Q.02",
+        "area":  "Perairan barat Biak",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/Q.02_Perairan%20barat%20Biak.json"
+    },
+    {
+        "code":  "F.10",
+        "area":  "Perairan Karawang - Subang",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/F.10_Perairan%20Karawang%20-%20Subang.json"
+    },
+    {
+        "code":  "O.10",
+        "area":  "Teluk Kau",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.10_Teluk%20Kau.json"
+    },
+    {
+        "code":  "K.04",
+        "area":  "Selat Sumba bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.04_Selat%20Sumba%20bagian%20barat.json"
+    },
+    {
+        "code":  "S.04",
+        "area":  "Perairan Teluk Tolo bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.04_Perairan%20Teluk%20Tolo%20bagian%20timur.json"
+    },
+    {
+        "code":  "U.03",
+        "area":  "Perairan selatan Banten",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/U.03_Perairan%20selatan%20Banten.json"
+    },
+    {
+        "code":  "M.08",
+        "area":  "Perairan barat Sulawesi Tengah",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/M.08_Perairan%20barat%20Sulawesi%20Tengah.json"
+    },
+    {
+        "code":  "N.01",
+        "area":  "Perairan utara Sulawesi Utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.01_Perairan%20utara%20Sulawesi%20Utara.json"
+    },
+    {
+        "code":  "D.02",
+        "area":  "Perairan selatan Kep. Anambas",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.02_Perairan%20selatan%20Kep.%20Anambas.json"
+    },
+    {
+        "code":  "S.08",
+        "area":  "Laut Banda timur Sulawesi Tengara bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.08_Laut%20Banda%20timur%20Sulawesi%20Tengara%20bagian%20timur.json"
+    },
+    {
+        "code":  "J.07",
+        "area":  "Selat Lombok bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.07_Selat%20Lombok%20bagian%20utara.json"
+    },
+    {
+        "code":  "G.03",
+        "area":  "Perairan Kep. Karimun Jawa",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/G.03_Perairan%20Kep.%20Karimun%20Jawa.json"
+    },
+    {
+        "code":  "S.01",
+        "area":  "Perairan Banggai bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.01_Perairan%20Banggai%20bagian%20utara.json"
+    },
+    {
+        "code":  "F.03",
+        "area":  "Perairan utara P. Belitung",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/F.03_Perairan%20utara%20P.%20Belitung.json"
+    },
+    {
+        "code":  "J.03",
+        "area":  "Selat Bali bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.03_Selat%20Bali%20bagian%20selatan.json"
+    },
+    {
+        "code":  "B.03",
+        "area":  "Perairan timur P. Siberut",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.03_Perairan%20timur%20P.%20Siberut.json"
+    },
+    {
+        "code":  "T.13",
+        "area":  "Laut Arafuru bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.13_Laut%20Arafuru%20bagian%20barat.json"
+    },
+    {
+        "code":  "A.06",
+        "area":  "Perairan barat Aceh",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/A.06_Perairan%20barat%20Aceh.json"
+    },
+    {
+        "code":  "S.15",
+        "area":  "Perairan selatan Wakatobi bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.15_Perairan%20selatan%20Wakatobi%20bagian%20timur.json"
+    },
+    {
+        "code":  "T.15",
+        "area":  "Perairan Kep. Aru",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.15_Perairan%20Kep.%20Aru.json"
+    },
+    {
+        "code":  "U.01",
+        "area":  "Selat Sunda bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/U.01_Selat%20Sunda%20bagian%20utara.json"
+    },
+    {
+        "code":  "I.11",
+        "area":  "Selat Madura bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.11_Selat%20Madura%20bagian%20barat.json"
+    },
+    {
+        "code":  "K.14",
+        "area":  "Samudera Hindia selatan Kupang - P. Rote",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.14_Samudera%20Hindia%20selatan%20Kupang%20-%20P.%20Rote.json"
+    },
+    {
+        "code":  "K.03",
+        "area":  "Selat Sape bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.03_Selat%20Sape%20bagian%20selatan.json"
+    },
+    {
+        "code":  "Q.06",
+        "area":  "Teluk Cenderawasih",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/Q.06_Teluk%20Cenderawasih.json"
+    },
+    {
+        "code":  "H.04",
+        "area":  "Perairan Cilacap",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/H.04_Perairan%20Cilacap.json"
+    },
+    {
+        "code":  "O.09",
+        "area":  "Perairan Morotai bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.09_Perairan%20Morotai%20bagian%20selatan.json"
+    },
+    {
+        "code":  "P.03",
+        "area":  "Perairan Manokwari",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/P.03_Perairan%20Manokwari.json"
+    },
+    {
+        "code":  "I.08",
+        "area":  "Perairan utara Madura",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.08_Perairan%20utara%20Madura.json"
+    },
+    {
+        "code":  "P.07",
+        "area":  "Teluk Bintuni",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/P.07_Teluk%20Bintuni.json"
+    },
+    {
+        "code":  "O.03",
+        "area":  "Perairan Halmahera Barat bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.03_Perairan%20Halmahera%20Barat%20bagian%20utara.json"
+    },
+    {
+        "code":  "L.09",
+        "area":  "Teluk Bone bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.09_Teluk%20Bone%20bagian%20utara.json"
+    },
+    {
+        "code":  "F.09",
+        "area":  "Teluk Jakarta",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/F.09_Teluk%20Jakarta.json"
+    },
+    {
+        "code":  "I.10",
+        "area":  "Perairan Kep. Kangean",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.10_Perairan%20Kep.%20Kangean.json"
+    },
+    {
+        "code":  "C.05",
+        "area":  "Samudera Hindia barat Lampung",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/C.05_Samudera%20Hindia%20barat%20Lampung.json"
+    },
+    {
+        "code":  "B.12",
+        "area":  "Samudera Hindia barat Bengkulu",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.12_Samudera%20Hindia%20barat%20Bengkulu.json"
+    },
+    {
+        "code":  "D.05",
+        "area":  "Perairan utara Kep. Natuna",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.05_Perairan%20utara%20Kep.%20Natuna.json"
+    },
+    {
+        "code":  "F.02",
+        "area":  "Selat Gelasa",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/F.02_Selat%20Gelasa.json"
+    },
+    {
+        "code":  "K.08",
+        "area":  "Samudera Hindia selatan P. Sumba - P. Sabu",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.08_Samudera%20Hindia%20selatan%20P.%20Sumba%20-%20P.%20Sabu.json"
+    },
+    {
+        "code":  "J.12",
+        "area":  "Samudera Hindia selatan NTB",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.12_Samudera%20Hindia%20selatan%20NTB.json"
+    },
+    {
+        "code":  "L.11",
+        "area":  "Perairan timur Kep. Selayar",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.11_Perairan%20timur%20Kep.%20Selayar.json"
+    },
+    {
+        "code":  "B.11",
+        "area":  "Perairan timur P. Enggano",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.11_Perairan%20timur%20P.%20Enggano.json"
+    },
+    {
+        "code":  "B.09",
+        "area":  "Samudera Hindia barat Kep. Mentawai",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.09_Samudera%20Hindia%20barat%20Kep.%20Mentawai.json"
+    },
+    {
+        "code":  "P.02",
+        "area":  "Perairan Raja Ampat bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/P.02_Perairan%20Raja%20Ampat%20bagian%20utara.json"
+    },
+    {
+        "code":  "I.09",
+        "area":  "Perairan Kep. Sapudi",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.09_Perairan%20Kep.%20Sapudi.json"
+    },
+    {
+        "code":  "B.06",
+        "area":  "Perairan barat P. Pagai",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.06_Perairan%20barat%20P.%20Pagai.json"
+    },
+    {
+        "code":  "J.08",
+        "area":  "Laut Sumbawa",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.08_Laut%20Sumbawa.json"
+    },
+    {
+        "code":  "H.07",
+        "area":  "Samudera Hindia selatan Jawa Tengah",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/H.07_Samudera%20Hindia%20selatan%20Jawa%20Tengah.json"
+    },
+    {
+        "code":  "D.04",
+        "area":  "Perairan barat Kep. Natuna",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.04_Perairan%20barat%20Kep.%20Natuna.json"
+    },
+    {
+        "code":  "R.03",
+        "area":  "Laut Arafuru timur Kepulauan Aru",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/R.03_Laut%20Arafuru%20timur%20Kepulauan%20Aru.json"
+    },
+    {
+        "code":  "K.02",
+        "area":  "Selat Sape bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.02_Selat%20Sape%20bagian%20utara.json"
+    },
+    {
+        "code":  "P.06",
+        "area":  "Perairan Sorong bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/P.06_Perairan%20Sorong%20bagian%20selatan.json"
+    },
+    {
+        "code":  "B.05",
+        "area":  "Perairan timur P. Pagai",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.05_Perairan%20timur%20P.%20Pagai.json"
+    },
+    {
+        "code":  "O.04",
+        "area":  "Perairan Kep. Loloda",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.04_Perairan%20Kep.%20Loloda.json"
+    },
+    {
+        "code":  "J.05",
+        "area":  "Selat Lombok bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.05_Selat%20Lombok%20bagian%20selatan.json"
+    },
+    {
+        "code":  "S.03",
+        "area":  "Perairan Teluk Tolo bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.03_Perairan%20Teluk%20Tolo%20bagian%20barat.json"
+    },
+    {
+        "code":  "K.11",
+        "area":  "Selat Ombai",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.11_Selat%20Ombai.json"
+    },
+    {
+        "code":  "B.10",
+        "area":  "Perairan barat Bengkulu",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.10_Perairan%20barat%20Bengkulu.json"
+    },
+    {
+        "code":  "F.11",
+        "area":  "Perairan Indramayu - Cirebon",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/F.11_Perairan%20Indramayu%20-%20Cirebon.json"
+    },
+    {
+        "code":  "D.10",
+        "area":  "Perairan Pontianak - Mempawah",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.10_Perairan%20Pontianak%20-%20Mempawah.json"
+    },
+    {
+        "code":  "M.01",
+        "area":  "Perairan Kota Baru bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/M.01_Perairan%20Kota%20Baru%20bagian%20barat.json"
+    },
+    {
+        "code":  "F.04",
+        "area":  "Perairan selatan P. Belitung",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/F.04_Perairan%20selatan%20P.%20Belitung.json"
+    },
+    {
+        "code":  "Q.03",
+        "area":  "Perairan utara Biak",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/Q.03_Perairan%20utara%20Biak.json"
+    },
+    {
+        "code":  "C.08",
+        "area":  "Selat Bangka bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/C.08_Selat%20Bangka%20bagian%20selatan.json"
+    },
+    {
+        "code":  "B.01",
+        "area":  "Perairan barat Sumatera Barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.01_Perairan%20barat%20Sumatera%20Barat.json"
+    },
+    {
+        "code":  "T.12",
+        "area":  "Perairan Kep. Tanimbar",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.12_Perairan%20Kep.%20Tanimbar.json"
+    },
+    {
+        "code":  "J.09",
+        "area":  "Selat Alas bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.09_Selat%20Alas%20bagian%20utara.json"
+    },
+    {
+        "code":  "E.05",
+        "area":  "Selat Berhala",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/E.05_Selat%20Berhala.json"
+    },
+    {
+        "code":  "F.06",
+        "area":  "Laut Jawa bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/F.06_Laut%20Jawa%20bagian%20barat.json"
+    },
+    {
+        "code":  "A.08",
+        "area":  "Samudera Hindia barat Aceh",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/A.08_Samudera%20Hindia%20barat%20Aceh.json"
+    },
+    {
+        "code":  "F.08",
+        "area":  "Perairan Kep. Seribu",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/F.08_Perairan%20Kep.%20Seribu.json"
+    },
+    {
+        "code":  "S.14",
+        "area":  "Perairan selatan Wakatobi bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.14_Perairan%20selatan%20Wakatobi%20bagian%20barat.json"
+    },
+    {
+        "code":  "S.11",
+        "area":  "Perairan Bau-bau bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.11_Perairan%20Bau-bau%20bagian%20selatan.json"
+    },
+    {
+        "code":  "I.05",
+        "area":  "Laut Jawa bagian timur Masalembo",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.05_Laut%20Jawa%20bagian%20timur%20Masalembo.json"
+    },
+    {
+        "code":  "K.12",
+        "area":  "Perairan utara Kupang - P. Rote",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.12_Perairan%20utara%20Kupang%20-%20P.%20Rote.json"
+    },
+    {
+        "code":  "T.05",
+        "area":  "Perairan selatan P. Seram",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.05_Perairan%20selatan%20P.%20Seram.json"
+    },
+    {
+        "code":  "O.12",
+        "area":  "Laut Halmahera",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.12_Laut%20Halmahera.json"
+    },
+    {
+        "code":  "T.16",
+        "area":  "Laut Arafuru bagian tengah",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.16_Laut%20Arafuru%20bagian%20tengah.json"
+    },
+    {
+        "code":  "T.11",
+        "area":  "Perairan Kep. Babar",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.11_Perairan%20Kep.%20Babar.json"
+    },
+    {
+        "code":  "K.01",
+        "area":  "Perairan utara Flores",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.01_Perairan%20utara%20Flores.json"
+    },
+    {
+        "code":  "N.11",
+        "area":  "Perairan selatan Sulawesi Utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.11_Perairan%20selatan%20Sulawesi%20Utara.json"
+    },
+    {
+        "code":  "M.03",
+        "area":  "Perairan Balikpapan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/M.03_Perairan%20Balikpapan.json"
+    },
+    {
+        "code":  "L.13",
+        "area":  "Laut Flores bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.13_Laut%20Flores%20bagian%20barat.json"
+    },
+    {
+        "code":  "N.03",
+        "area":  "Laut Sulawesi bagian tengah",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.03_Laut%20Sulawesi%20bagian%20tengah.json"
+    },
+    {
+        "code":  "L.03",
+        "area":  "Perairan Spermonde Pangkep bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.03_Perairan%20Spermonde%20Pangkep%20bagian%20barat.json"
+    },
+    {
+        "code":  "A.09",
+        "area":  "Perairan Kep. Nias - Sibolga",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/A.09_Perairan%20Kep.%20Nias%20-%20Sibolga.json"
+    },
+    {
+        "code":  "P.09",
+        "area":  "Perairan Kaimana",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/P.09_Perairan%20Kaimana.json"
+    },
+    {
+        "code":  "C.01",
+        "area":  "Perairan barat Lampung",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/C.01_Perairan%20barat%20Lampung.json"
+    },
+    {
+        "code":  "I.13",
+        "area":  "Perairan selatan Jawa Timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.13_Perairan%20selatan%20Jawa%20Timur.json"
+    },
+    {
+        "code":  "K.06",
+        "area":  "Laut Sawu bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.06_Laut%20Sawu%20bagian%20utara.json"
+    },
+    {
+        "code":  "T.04",
+        "area":  "Perairan P. Ambon - Kep. Lease",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.04_Perairan%20P.%20Ambon%20-%20Kep.%20Lease.json"
+    },
+    {
+        "code":  "P.01",
+        "area":  "Samudera Pasifik utara Papua Barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/P.01_Samudera%20Pasifik%20utara%20Papua%20Barat.json"
+    },
+    {
+        "code":  "D.01",
+        "area":  "Laut Natuna Utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.01_Laut%20Natuna%20Utara.json"
+    },
+    {
+        "code":  "L.01",
+        "area":  "Selat Makassar bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.01_Selat%20Makassar%20bagian%20selatan.json"
+    },
+    {
+        "code":  "S.12",
+        "area":  "Perairan utara Wakatobi bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.12_Perairan%20utara%20Wakatobi%20bagian%20barat.json"
+    },
+    {
+        "code":  "B.04",
+        "area":  "Perairan timur P. Sipora",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.04_Perairan%20timur%20P.%20Sipora.json"
+    },
+    {
+        "code":  "J.11",
+        "area":  "Selat Alas bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.11_Selat%20Alas%20bagian%20selatan.json"
+    },
+    {
+        "code":  "N.04",
+        "area":  "Laut Sulawesi bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.04_Laut%20Sulawesi%20bagian%20timur.json"
+    },
+    {
+        "code":  "J.01",
+        "area":  "Laut Bali",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.01_Laut%20Bali.json"
+    },
+    {
+        "code":  "T.03",
+        "area":  "Perairan P. Buru",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.03_Perairan%20P.%20Buru.json"
+    },
+    {
+        "code":  "D.11",
+        "area":  "Perairan Ketapang",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.11_Perairan%20Ketapang.json"
+    },
+    {
+        "code":  "U.02",
+        "area":  "Selat Sunda bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/U.02_Selat%20Sunda%20bagian%20selatan.json"
+    },
+    {
+        "code":  "D.13",
+        "area":  "Perairan Kepulauan Karimata",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.13_Perairan%20Kepulauan%20Karimata.json"
+    },
+    {
+        "code":  "N.12",
+        "area":  "Teluk Tomini bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.12_Teluk%20Tomini%20bagian%20timur.json"
+    },
+    {
+        "code":  "T.02",
+        "area":  "Laut Seram bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.02_Laut%20Seram%20bagian%20timur.json"
+    },
+    {
+        "code":  "O.07",
+        "area":  "Perairan Obi",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.07_Perairan%20Obi.json"
+    },
+    {
+        "code":  "G.08",
+        "area":  "Perairan Pati - Rembang",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/G.08_Perairan%20Pati%20-%20Rembang.json"
+    },
+    {
+        "code":  "T.07",
+        "area":  "Laut Banda utara bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/T.07_Laut%20Banda%20utara%20bagian%20timur.json"
+    },
+    {
+        "code":  "H.02",
+        "area":  "Perairan Garut - Pangandaran",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/H.02_Perairan%20Garut%20-%20Pangandaran.json"
+    },
+    {
+        "code":  "J.06",
+        "area":  "Samudera Hindia selatan Bali",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.06_Samudera%20Hindia%20selatan%20Bali.json"
+    },
+    {
+        "code":  "P.05",
+        "area":  "Perairan Misool",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/P.05_Perairan%20Misool.json"
+    },
+    {
+        "code":  "C.07",
+        "area":  "Perairan timur Lampung bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/C.07_Perairan%20timur%20Lampung%20bagian%20utara.json"
+    },
+    {
+        "code":  "L.04",
+        "area":  "Perairan Spermonde Pangkep",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.04_Perairan%20Spermonde%20Pangkep.json"
+    },
+    {
+        "code":  "N.10",
+        "area":  "Laut Maluku bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.10_Laut%20Maluku%20bagian%20selatan.json"
+    },
+    {
+        "code":  "O.01",
+        "area":  "Samudera Pasifik utara Halmahera bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.01_Samudera%20Pasifik%20utara%20Halmahera%20bagian%20utara.json"
+    },
+    {
+        "code":  "G.01",
+        "area":  "Perairan Kalimantan Tengah bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/G.01_Perairan%20Kalimantan%20Tengah%20bagian%20barat.json"
+    },
+    {
+        "code":  "G.04",
+        "area":  "Perairan Brebes - Pemalang",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/G.04_Perairan%20Brebes%20-%20Pemalang.json"
+    },
+    {
+        "code":  "L.12",
+        "area":  "Laut Flores bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.12_Laut%20Flores%20bagian%20utara.json"
+    },
+    {
+        "code":  "D.08",
+        "area":  "Laut Natuna",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.08_Laut%20Natuna.json"
+    },
+    {
+        "code":  "D.06",
+        "area":  "Perairan selatan Kep. Natuna - Pulau Midai",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.06_Perairan%20selatan%20Kep.%20Natuna%20-%20Pulau%20Midai.json"
+    },
+    {
+        "code":  "A.10",
+        "area":  "Samudera Hindia barat Kep. Nias",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/A.10_Samudera%20Hindia%20barat%20Kep.%20Nias.json"
+    },
+    {
+        "code":  "I.01",
+        "area":  "Perairan Kalimantan Tengah bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.01_Perairan%20Kalimantan%20Tengah%20bagian%20timur.json"
+    },
+    {
+        "code":  "G.06",
+        "area":  "Perairan Semarang - Demak",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/G.06_Perairan%20Semarang%20-%20Demak.json"
+    },
+    {
+        "code":  "R.04",
+        "area":  "Perairan Yos Sudarso bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/R.04_Perairan%20Yos%20Sudarso%20bagian%20utara.json"
+    },
+    {
+        "code":  "D.07",
+        "area":  "Perairan Kep. Subi - Serasan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.07_Perairan%20Kep.%20Subi%20-%20Serasan.json"
+    },
+    {
+        "code":  "Q.01",
+        "area":  "Samudera Pasifik utara Biak",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/Q.01_Samudera%20Pasifik%20utara%20Biak.json"
+    },
+    {
+        "code":  "N.09",
+        "area":  "Laut Maluku bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.09_Laut%20Maluku%20bagian%20utara.json"
+    },
+    {
+        "code":  "N.05",
+        "area":  "Perairan Kep. Sangihe",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.05_Perairan%20Kep.%20Sangihe.json"
+    },
+    {
+        "code":  "J.02",
+        "area":  "Selat Bali bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.02_Selat%20Bali%20bagian%20utara.json"
+    },
+    {
+        "code":  "E.03",
+        "area":  "Perairan Kep. Bintan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/E.03_Perairan%20Kep.%20Bintan.json"
+    },
+    {
+        "code":  "I.12",
+        "area":  "Selat Madura bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.12_Selat%20Madura%20bagian%20timur.json"
+    },
+    {
+        "code":  "O.16",
+        "area":  "Perairan Kep. Sula bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.16_Perairan%20Kep.%20Sula%20bagian%20selatan.json"
+    },
+    {
+        "code":  "E.04",
+        "area":  "Perairan Kep. Lingga",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/E.04_Perairan%20Kep.%20Lingga.json"
+    },
+    {
+        "code":  "L.10",
+        "area":  "Teluk Bone bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.10_Teluk%20Bone%20bagian%20selatan.json"
+    },
+    {
+        "code":  "L.07",
+        "area":  "Perairan barat Kep. Selayar",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.07_Perairan%20barat%20Kep.%20Selayar.json"
+    },
+    {
+        "code":  "L.02",
+        "area":  "Perairan Pare - pare",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.02_Perairan%20Pare%20-%20pare.json"
+    },
+    {
+        "code":  "D.09",
+        "area":  "Perairan Singkawang - Sambas",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/D.09_Perairan%20Singkawang%20-%20Sambas.json"
+    },
+    {
+        "code":  "S.05",
+        "area":  "Perairan Manui Kendari bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.05_Perairan%20Manui%20Kendari%20bagian%20barat.json"
+    },
+    {
+        "code":  "Q.04",
+        "area":  "Perairan timur Biak",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/Q.04_Perairan%20timur%20Biak.json"
+    },
+    {
+        "code":  "N.06",
+        "area":  "Perairan Kep. Talaud",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/N.06_Perairan%20Kep.%20Talaud.json"
+    },
+    {
+        "code":  "F.07",
+        "area":  "Perairan utara Banten",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/F.07_Perairan%20utara%20Banten.json"
+    },
+    {
+        "code":  "S.10",
+        "area":  "Perairan Bau-bau bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.10_Perairan%20Bau-bau%20bagian%20utara.json"
+    },
+    {
+        "code":  "O.05",
+        "area":  "Perairan Ternate - Batang Dua",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.05_Perairan%20Ternate%20-%20Batang%20Dua.json"
+    },
+    {
+        "code":  "M.04",
+        "area":  "Selat Makassar bagian tengah",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/M.04_Selat%20Makassar%20bagian%20tengah.json"
+    },
+    {
+        "code":  "Q.08",
+        "area":  "Samudera Pasifik utara Jayapura",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/Q.08_Samudera%20Pasifik%20utara%20Jayapura.json"
+    },
+    {
+        "code":  "B.07",
+        "area":  "Perairan barat P. Sipora",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.07_Perairan%20barat%20P.%20Sipora.json"
+    },
+    {
+        "code":  "F.05",
+        "area":  "Selat Karimata bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/F.05_Selat%20Karimata%20bagian%20selatan.json"
+    },
+    {
+        "code":  "E.06",
+        "area":  "Perairan utara P. Bangka",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/E.06_Perairan%20utara%20P.%20Bangka.json"
+    },
+    {
+        "code":  "R.01",
+        "area":  "Perairan Amamapare - Agats bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/R.01_Perairan%20Amamapare%20-%20Agats%20bagian%20barat.json"
+    },
+    {
+        "code":  "I.04",
+        "area":  "Laut Jawa bagian barat Masalembo",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/I.04_Laut%20Jawa%20bagian%20barat%20Masalembo.json"
+    },
+    {
+        "code":  "A.04",
+        "area":  "Perairan Lhokseumawe",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/A.04_Perairan%20Lhokseumawe.json"
+    },
+    {
+        "code":  "L.08",
+        "area":  "Perairan Kep. Sabalana",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/L.08_Perairan%20Kep.%20Sabalana.json"
+    },
+    {
+        "code":  "K.09",
+        "area":  "Selat Flores - Lamakera",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/K.09_Selat%20Flores%20-%20Lamakera.json"
+    },
+    {
+        "code":  "S.09",
+        "area":  "Laut Banda timur Sulawesi Tenggara bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.09_Laut%20Banda%20timur%20Sulawesi%20Tenggara%20bagian%20barat.json"
+    },
+    {
+        "code":  "G.02",
+        "area":  "Laut Jawa bagian tengah",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/G.02_Laut%20Jawa%20bagian%20tengah.json"
+    },
+    {
+        "code":  "P.04",
+        "area":  "Perairan Raja Ampat - Sorong",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/P.04_Perairan%20Raja%20Ampat%20-%20Sorong.json"
+    },
+    {
+        "code":  "C.02",
+        "area":  "Selat Sunda bagian barat",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/C.02_Selat%20Sunda%20bagian%20barat.json"
+    },
+    {
+        "code":  "M.02",
+        "area":  "Perairan Kota Baru bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/M.02_Perairan%20Kota%20Baru%20bagian%20timur.json"
+    },
+    {
+        "code":  "B.08",
+        "area":  "Perairan barat P. Siberut",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.08_Perairan%20barat%20P.%20Siberut.json"
+    },
+    {
+        "code":  "B.02",
+        "area":  "Perairan utara P. Siberut",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/B.02_Perairan%20utara%20P.%20Siberut.json"
+    },
+    {
+        "code":  "C.09",
+        "area":  "Selat Bangka bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/C.09_Selat%20Bangka%20bagian%20utara.json"
+    },
+    {
+        "code":  "S.13",
+        "area":  "Perairan utara Wakatobi bagian timur",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/S.13_Perairan%20utara%20Wakatobi%20bagian%20timur.json"
+    },
+    {
+        "code":  "O.08",
+        "area":  "Perairan Morotai bagian utara",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/O.08_Perairan%20Morotai%20bagian%20utara.json"
+    },
+    {
+        "code":  "M.06",
+        "area":  "Perairan Samarinda - Bontang",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/M.06_Perairan%20Samarinda%20-%20Bontang.json"
+    },
+    {
+        "code":  "C.03",
+        "area":  "Teluk Lampung bagian selatan",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/C.03_Teluk%20Lampung%20bagian%20selatan.json"
+    },
+    {
+        "code":  "Q.07",
+        "area":  "Perairan Jayapura - Sarmi",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/Q.07_Perairan%20Jayapura%20-%20Sarmi.json"
+    },
+    {
+        "code":  "J.04",
+        "area":  "Selat Badung",
+        "url":  "https://peta-maritim.bmkg.go.id/public_api/perairan/J.04_Selat%20Badung.json"
+    }
+]

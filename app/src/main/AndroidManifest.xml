@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:node="replace" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
 
     <application
         android:allowBackup="true"
@@ -32,8 +32,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".presentation.activities.LoginActivity" />
-        <activity android:name=".presentation.activities.RegisterActivity" />
+        <activity
+            android:name=".presentation.activities.LoginActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".presentation.activities.RegisterActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".presentation.activities.DetailSpotActivity" />
         <activity android:name=".presentation.activities.SpotListActivity" />
         <activity android:name=".presentation.activities.MainActivity" />

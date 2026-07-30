@@ -62,10 +62,11 @@
         <TextView
             android:id="@+id/tvBrandTagline"
             style="@style/TextAppearance.App.BodySmall"
-            android:layout_width="260dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_8"
             android:gravity="center"
+            android:maxWidth="280dp"
             android:text="@string/app_tagline"
             android:textColor="#DCEBFF"
             android:textSize="13sp" />

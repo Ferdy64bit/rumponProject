@@ -2,11 +2,7 @@
 <resources>
     <!-- Material Alert Dialog Style -->
     <style name="ThemeOverlayAppMaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
-        <item name="alertDialogStyle">@style/WidgetAppMaterialAlertDialog</item>
-    </style>
-
-    <style name="WidgetAppMaterialAlertDialog" parent="Base.Theme.Material3.Light.Dialog">
-        <item name="backgroundTint">@color/surface</item>
+        <!-- Default Material3 dialog behavior -->
         <item name="shapeAppearance">@style/ShapeAppearanceAppDialog</item>
     </style>
 

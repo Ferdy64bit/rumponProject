@@ -20,5 +20,15 @@
     <dimen name="screen_margin">20dp</dimen>
     <dimen name="component_spacing_vertical">16dp</dimen>
     <dimen name="card_inner_padding">16dp</dimen>
-    <dimen name="bottom_nav_height">80dp</dimen>
+    <dimen name="bottom_nav_height">88dp</dimen>
+    <dimen name="bottom_nav_safe_padding">32dp</dimen>
+    <dimen name="top_safe_spacing">28dp</dimen>
+    <dimen name="content_max_width">520dp</dimen>
+    <dimen name="content_max_width_wide">720dp</dimen>
+    <dimen name="touch_target">48dp</dimen>
+    <dimen name="forecast_card_width">248dp</dimen>
+    <dimen name="forecast_card_min_height">194dp</dimen>
+    <dimen name="nearby_spot_list_height">180dp</dimen>
+    <dimen name="spot_card_width">116dp</dimen>
+    <dimen name="spot_card_image_height">92dp</dimen>
 </resources>

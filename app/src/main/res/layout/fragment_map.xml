@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
@@ -13,6 +14,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_16"
+        android:layout_marginTop="@dimen/top_safe_spacing"
+        android:layout_marginEnd="@dimen/spacing_16"
+        app:cardCornerRadius="@dimen/radius_20"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@android:color/transparent"
+                app:queryHint="Cari titik pancing..." />
+
+            <ImageButton
+                android:id="@+id/btnFilter"
+                android:layout_width="@dimen/touch_target"
+                android:layout_height="@dimen/touch_target"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Filter peta"
+                android:src="@android:drawable/ic_menu_manage"
+                app:tint="@color/primary" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabMapType"
         android:layout_width="wrap_content"
@@ -22,7 +62,7 @@
         app:backgroundTint="@color/surface"
         app:tint="@color/primary"
         app:fabSize="mini"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardSearch"
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="Map Type" />
 
@@ -41,7 +81,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardSpotInfo"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spacing_16"
         android:visibility="gone"
@@ -57,21 +97,94 @@
             android:orientation="vertical"
             android:padding="@dimen/spacing_16">
 
-            <TextView
-                android:id="@+id/tvCardSpotName"
-                style="@style/TextAppearance.App.TitleMedium"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nama Spot"
-                android:textColor="@color/text_primary" />
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivCardSpot"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginEnd="@dimen/spacing_12"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
+                    android:src="@android:drawable/ic_menu_gallery" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvCardSpotName"
+                        style="@style/TextAppearance.App.TitleMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="Nama Spot"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:id="@+id/tvCardSpotType"
+                        style="@style/TextAppearance.App.BodySmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Jenis Spot"
+                        android:textColor="@color/text_secondary" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="@dimen/spacing_8"
+                android:background="@color/divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvCardWeather"
+                    style="@style/TextAppearance.App.BodySmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="Loading cuaca..."
+                    app:drawableStartCompat="@android:drawable/ic_menu_myplaces" />
+
+                <TextView
+                    android:id="@+id/tvCardTide"
+                    style="@style/TextAppearance.App.BodySmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="Loading pasang..."
+                    app:drawableStartCompat="@android:drawable/ic_menu_recent_history" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/tvCardSpotType"
-                style="@style/TextAppearance.App.BodySmall"
-                android:layout_width="wrap_content"
+                android:id="@+id/tvCardRecommendation"
+                style="@style/TextAppearance.App.LabelLarge"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Jenis Spot"
-                android:textColor="@color/text_secondary" />
+                android:layout_marginTop="@dimen/spacing_4"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Rekomendasi: Calculating..."
+                android:textColor="@color/primary" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -83,18 +196,36 @@
                     android:id="@+id/btnCardDetail"
                     style="@style/Widget.Material3.Button.TextButton"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
                     android:text="Detail" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCardRoute"
-                    style="@style/WidgetAppButtonPrimary"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_marginStart="@dimen/spacing_8"
                     android:layout_weight="1"
                     android:text="Navigasi" />
+
+                <ImageButton
+                    android:id="@+id/btnCardEdit"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="@dimen/spacing_8"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_menu_edit"
+                    app:tint="@color/primary" />
+
+                <ImageButton
+                    android:id="@+id/btnCardDelete"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="@dimen/spacing_4"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_menu_delete"
+                    app:tint="@color/error" />
             </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

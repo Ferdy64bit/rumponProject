@@ -34,7 +34,6 @@ retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", ver
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth" }
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore" }
-firebase-storage = { group = "com.google.firebase", name = "firebase-storage" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle" }
 lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata", version.ref = "lifecycle" }
@@ -45,4 +44,3 @@ play-services-auth = { group = "com.google.android.gms", name = "play-services-a
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
-

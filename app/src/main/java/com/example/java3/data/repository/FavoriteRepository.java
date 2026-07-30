@@ -40,6 +40,15 @@ public class FavoriteRepository {
                 .addOnFailureListener(e -> callback.onFailure(e.getMessage()));
     }
 
+    public void isFavorite(String userId, String pointId, FirestoreCallback<Boolean> callback) {
+        String docId = userId + "_" + pointId;
+        firestore.collection(Constants.COL_FAVORITES)
+                .document(docId)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> callback.onSuccess(documentSnapshot.exists()))
+                .addOnFailureListener(e -> callback.onFailure(e.getMessage()));
+    }
+
     public void getUserFavorites(String userId, FirestoreCallback<List<Favorite>> callback) {
         firestore.collection(Constants.COL_FAVORITES)
                 .whereEqualTo("userId", userId)

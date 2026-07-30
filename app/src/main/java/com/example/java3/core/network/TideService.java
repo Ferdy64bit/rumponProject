@@ -1,28 +1,20 @@
 package com.example.java3.core.network;
 
-import com.example.java3.data.remote.TideResponse;
-import com.example.java3.data.remote.TideStation;
-
-import java.util.List;
+import com.google.gson.JsonObject;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public interface TideService {
-    @GET("api/stations/nearest")
-    Call<List<TideStation>> getNearestStation(
-        @Header("X-API-Key") String apiKey,
-        @Query("lat") double lat,
-        @Query("lng") double lng
+    @GET("public_api/perairan/{area}.json")
+    Call<JsonObject> getMarineForecast(
+        @Path(value = "area", encoded = true) String area
     );
 
-    @GET("api/station/{id}/tides")
-    Call<TideResponse> getTideData(
-        @Header("X-API-Key") String apiKey,
-        @Path("id") String stationId,
-        @Query("days") int days
-    );
+    @GET("public_api/static/wilayah_perairan.json")
+    Call<JsonObject> getMarineAreaPolygons();
+
+    @GET("public_api/overview/gelombang.json")
+    Call<JsonObject> getWaveOverview();
 }

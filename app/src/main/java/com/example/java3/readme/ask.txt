@@ -1,0 +1,365 @@
+BAB IV
+HASIL DAN PEMBAHASAN
+4.1 Implementasi Metode Waterfall
+
+Pada bab ini dijelaskan hasil implementasi aplikasi Fishing Point yang dikembangkan menggunakan metode Waterfall. Tahapan pengembangan sistem dilakukan secara berurutan mulai dari analisis kebutuhan, perancangan sistem, implementasi, pengujian, hingga pemeliharaan. Setiap tahapan menghasilkan keluaran yang menjadi dasar bagi tahapan berikutnya sehingga proses pengembangan berjalan secara sistematis.
+
+4.2 Tahap Analisis Kebutuhan (Requirement Analysis)
+
+Subbab ini menjelaskan bagaimana kebutuhan sistem diperoleh.
+
+4.2.1 Analisis Kebutuhan Fungsional
+
+Berisi penjelasan mengenai kebutuhan utama sistem.
+
+Contohnya:
+
+Login dan Register
+Menampilkan Google Maps
+Menampilkan posisi pengguna
+Menampilkan lokasi fishing point
+Menghitung jarak menggunakan Haversine
+Menampilkan kondisi cuaca
+Menampilkan kondisi perairan
+Menampilkan rekomendasi memancing
+Menambah spot
+Community
+Favorite
+Profile
+4.2.2 Analisis Kebutuhan Non Fungsional
+
+Berisi
+
+Android Studio
+Java
+Google Maps API
+Firebase
+Firestore
+Cloudinary
+OpenWeather
+Open Meteo Marine
+Internet
+Smartphone Android
+4.2.3 Analisis Permasalahan
+
+Menjelaskan hasil observasi.
+
+Misalnya
+
+Pemancing masih mencari lokasi secara manual.
+
+Tidak mengetahui kondisi cuaca.
+
+Tidak mengetahui kondisi gelombang.
+
+Sulit menentukan spot terbaik.
+
+Lalu jelaskan bahwa aplikasi dibuat sebagai solusi.
+
+4.3 Tahap Perancangan Sistem (System Design)
+
+Pada tahap ini dijelaskan bagaimana kebutuhan sistem diterjemahkan menjadi desain aplikasi.
+
+Subbab ini berisi:
+
+4.3.1 Arsitektur Sistem
+
+Berisi diagram arsitektur.
+
+Misalnya
+
+Android
+
+↓
+
+Repository
+
+↓
+
+Firebase
+
+↓
+
+API
+
+↓
+
+Maps
+
+↓
+
+Recommendation Engine
+
+4.3.2 Perancangan Database
+
+Jelaskan koleksi Firestore.
+
+Misalnya
+
+User
+
+Fishing Spot
+
+Community
+
+Favorite
+
+Comment
+
+Notification
+
+4.3.3 Perancangan Antarmuka
+
+Masukkan desain
+
+Login
+Dashboard
+Maps
+Detail Spot
+Community
+Profile
+4.3.4 Perancangan Recommendation Engine
+
+Nah...
+
+Di sini baru kita jelaskan flow engine.
+
+Misalnya
+
+GPS
+
+↓
+
+Haversine
+
+↓
+
+Weather
+
+↓
+
+Marine
+
+↓
+
+Fish Activity
+
+↓
+
+Safety
+
+↓
+
+Recommendation
+
+4.4 Tahap Implementasi Sistem (Coding)
+
+Nah...
+
+Isi BAB IV yang selama ini kita buat masuk ke sini.
+
+4.4.1 Implementasi Authentication
+Login
+Register
+Session
+Logout
+Reset Password
+4.4.2 Implementasi Dashboard
+Weather
+Marine
+Recommendation
+Spot Terdekat
+4.4.3 Implementasi Maps
+Google Maps
+Marker
+Polyline
+Radius
+GPS
+4.4.4 Implementasi Detail Spot
+Detail
+Favorite
+Share
+Edit
+Delete
+4.4.5 Implementasi Haversine
+
+Berisi
+
+Rumus
+
+Implementasi Java
+
+Hasil Perhitungan
+
+4.4.6 Implementasi Recommendation Engine
+
+Ini yang paling panjang.
+
+Jelaskan satu-satu.
+
+Distance Engine
+Weather Engine
+Marine Engine
+Fish Activity Engine
+Spot Quality Engine
+User Preference Engine
+Safety Engine
+Final Recommendation
+
+Di sini nanti kita masukkan tabel Beaufort yang sudah Anda putuskan sebagai standar penilaian angin, serta menjelaskan bahwa nilai Safety Score telah dikalibrasi berdasarkan hasil observasi lapangan di wilayah penelitian.
+
+4.4.7 Implementasi Community
+4.4.8 Implementasi Profile
+4.4.9 Implementasi Firestore
+4.4.10 Implementasi Cloudinary
+4.5 Tahap Pengujian Sistem (Testing)
+
+Nah...
+
+Karena Waterfall
+
+selesai coding
+
+masuk testing.
+
+4.5.1 Black Box Testing
+
+Semua fitur.
+
+4.5.2 Unit Testing
+
+Haversine
+
+Recommendation
+
+Helper
+
+4.5.3 Pengujian Device Nyata
+
+TECNO
+
+Android
+
+Runtime
+
+Performance
+
+4.5.4 Hasil Pengujian
+
+Tabel
+
+No	Modul	Hasil
+Login	Berhasil	
+Dashboard	Berhasil	
+Maps	Berhasil	
+Recommendation	Berhasil	
+4.6 Tahap Implementasi dan Pemeliharaan (Maintenance)
+
+Ini bagian yang hampir selalu dilupakan mahasiswa.
+
+Padahal Waterfall memiliki tahap ini.
+
+Isinya bukan teori.
+
+Tetapi
+
+apa saja yang Anda perbaiki setelah aplikasi selesai.
+
+Misalnya
+
+Perbaikan Dashboard.
+Perbaikan Polyline.
+Perbaikan Marker.
+Perbaikan UI.
+Perbaikan Community.
+Perbaikan Public Private Spot.
+Perbaikan Cloudinary.
+Optimasi Firestore.
+Kalibrasi Recommendation Engine berdasarkan hasil survei lapangan.
+Penyesuaian Safety Score menggunakan klasifikasi Beaufort dan karakteristik perairan Tanjung Anom.
+
+Ini semua memang terjadi selama proses pengembangan aplikasi Anda sehingga sangat relevan ditulis pada tahap pemeliharaan.
+
+4.7 Pembahasan
+
+Nah...
+
+Ini baru membahas hasil penelitian.
+
+Misalnya
+
+Apakah Haversine berhasil.
+Apakah GPS berjalan.
+Apakah Recommendation Engine berhasil.
+Apakah Firebase berhasil.
+Apakah Community berhasil.
+Apakah tujuan penelitian tercapai.
+
+Di sini juga Anda dapat membahas hasil survei lapangan, misalnya bahwa algoritma awal memberikan nilai keselamatan yang terlalu tinggi pada kecepatan angin sekitar 20 km/jam. Berdasarkan observasi di Pantai Tanjung Kait, dilakukan kalibrasi menggunakan Skala Beaufort sehingga rekomendasi aplikasi menjadi lebih sesuai dengan kondisi perairan setempat.
+
+4.8 Kesimpulan BAB IV
+
+Berisi ringkasan implementasi dan hasil pengujian sebagai pengantar menuju BAB V.
+
+Mengapa saya menyarankan struktur ini?
+
+Struktur ini mengikuti 100% tahapan Waterfall yang Anda gunakan pada BAB III:
+
+Analisis Kebutuhan → Perancangan Sistem → Implementasi → Pengujian → Pemeliharaan
+
+Kemudian seluruh fitur aplikasi (Authentication, Dashboard, Maps, Haversine, Recommendation Engine, Community, Profile, Firestore, dan Cloudinary) ditempatkan sebagai bagian dari tahap Implementasi Sistem. Dengan susunan seperti ini, hubungan antara metodologi penelitian dan hasil implementasi akan terlihat jelas, sehingga BAB IV menjadi lebih sistematis, lebih mudah dipahami, dan lebih kuat untuk dipertanggungjawabkan pada saat sidang skripsi.
+
+
+
+4.4 Tahap Implementasi Sistem (Coding)
+Tahap implementasi merupakan proses penerjemahan seluruh rancangan pada tahap sebelumnya menjadi kode program menggunakan Android Studio dan bahasa pemrograman Java. Struktur kode aplikasi disusun mengikuti pola MVVM dan Repository Pattern, dengan pembagian package menjadi core (utilitas dan manager), data (model remote dan repository), domain (model bisnis dan Recommendation Engine), serta presentation (activity, fragment, adapter, dan viewmodel). Penjelasan implementasi setiap fitur dijabarkan pada subbab berikut.
+4.4.1 Implementasi Authentication
+Fitur authentication diimplementasikan melalui LoginActivity, RegisterActivity, SplashActivity, serta AuthViewModel, LoginViewModel, dan RegisterViewModel yang berkomunikasi dengan AuthRepository dan FirebaseManager. SessionManager digunakan untuk menyimpan status login pengguna sehingga pengguna tidak perlu login ulang selama session masih aktif. Fitur reset password diimplementasikan dengan memanfaatkan mekanisme reset password bawaan Firebase Authentication yang mengirimkan tautan reset ke email pengguna terdaftar.
+4.4.2 Implementasi Dashboard
+Dashboard diimplementasikan melalui HomeFragment dan HomeViewModel. Halaman ini menampilkan lokasi pengguna, cuaca live dari WeatherRepository, kondisi perairan dari MarineHourlyRepository dan TideRepository, safety indicator, fish activity, rekomendasi memancing hasil Recommendation Engine, serta daftar spot terdekat yang dihitung menggunakan LocationUtils (metode Haversine).
+4.4.3 Implementasi Maps
+Modul Maps diimplementasikan melalui MapFragment dan MapViewModel dengan memanfaatkan Google Maps SDK. Marker fishing point dirender menggunakan FishingMarkerRenderer, sedangkan penentuan posisi pengguna memanfaatkan Fused Location Provider. Aplikasi juga menyediakan fitur polyline dari posisi pengguna menuju spot tujuan sebagai alternatif ketika rute navigasi Google Maps tidak tersedia pada wilayah perairan tertentu. Aturan ownership diterapkan pada modul ini sehingga tombol edit dan hapus spot hanya tersedia bagi pengguna yang merupakan pemilik spot.
+4.4.4 Implementasi Detail Spot
+Halaman detail spot diimplementasikan melalui DetailSpotActivity. Halaman ini menampilkan nama spot, jenis spot, foto, lokasi, status favorite, tombol share, tombol navigasi, serta kondisi cuaca dan perairan yang diambil berdasarkan koordinat spot yang bersangkutan, bukan berdasarkan lokasi pengguna. Fitur pengelolaan foto spot juga disediakan bagi pemilik spot, dengan foto default digunakan apabila pengguna belum menambahkan foto khusus.
+4.4.5 Implementasi Haversine
+Metode Haversine diimplementasikan pada kelas LocationUtils untuk menghitung jarak antara dua titik koordinat berdasarkan garis lengkung permukaan bumi. Rumus umum metode Haversine adalah sebagai berikut.
+a = sin²(Δlat/2) + cos(lat1) × cos(lat2) × sin²(Δlon/2) c = 2 × atan2(√a, √(1−a)) d = R × c   (R = jari-jari bumi ≈ 6371 km)
+Implementasi rumus tersebut pada aplikasi Fishing Point dituliskan dalam kode Java sebagai berikut.
+public static double calculateDistance(double lat1, double lon1, double lat2, double lon2) {     final int R = 6371;     double latDistance = Math.toRadians(lat2 - lat1);     double lonDistance = Math.toRadians(lon2 - lon1);     double a = Math.sin(latDistance/2) * Math.sin(latDistance/2)         + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2))         * Math.sin(lonDistance/2) * Math.sin(lonDistance/2);     double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));     return R * c; }
+Hasil perhitungan jarak dari fungsi tersebut digunakan pada dashboard, maps, detail spot, daftar spot terdekat, dan sebagai komponen Distance Score dalam Recommendation Engine.
+4.4.6 Implementasi Recommendation Engine
+Recommendation Engine diimplementasikan pada kelas RecommendationEngine yang menggabungkan tujuh komponen penilaian, yaitu Distance Engine, Weather Engine, Marine Engine, Fish Activity Engine, Spot Quality Engine, User Preference Engine, dan Safety Engine, sebelum menghasilkan Final Recommendation.
+Distance Engine
+Distance Score dihitung berdasarkan hasil Haversine dengan ketentuan sebagai berikut: jarak ≤ 2 km bernilai 100, ≤ 5 km bernilai 90, ≤ 10 km bernilai 75, ≤ 20 km bernilai 60, ≤ 50 km bernilai 40, dan lebih dari 50 km bernilai 20. Selain itu, sistem juga menerapkan batas skor akhir (distance score cap) agar spot yang berada sangat jauh dari pengguna tidak direkomendasikan secara berlebihan meskipun kondisi lingkungannya sangat baik.
+Weather Engine
+Weather Score dihitung dari data OpenWeather API berdasarkan kondisi langit (cerah bernilai 100, berawan 88, kabut 70, gerimis 55, hujan 35, dan badai petir 10), kemudian dikurangi apabila kecepatan angin melebihi 20 km/jam atau 30 km/jam, serta apabila jarak pandang (visibility) kurang dari 5000 meter.
+Marine Engine
+Marine Score dihitung dari data Open-Meteo Marine API dengan kombinasi tinggi gelombang saat ini (bobot 40%), tinggi gelombang maksimum 24 jam ke depan (bobot 25%), stabilitas gelombang (bobot 20%), dan kecepatan arus laut (bobot 15%). Semakin rendah dan stabil gelombang, semakin tinggi Marine Score yang dihasilkan.
+Fish Activity Engine
+Fish Activity Score merupakan estimasi aktivitas ikan yang terinspirasi dari konsep solunar prediction, dengan mempertimbangkan data pasang surut (tide), waktu golden hour (dini hari dan sore hari), serta kondisi cuaca dan perairan saat ini. Skor ini digunakan untuk memberikan label aktivitas ikan mulai dari Sangat Rendah hingga Sangat Tinggi.
+Spot Quality Engine
+Spot Quality Score dihitung berdasarkan rating rata-rata spot yang diperoleh dari koleksi reviews, dengan ketentuan rating ≥ 4,5 bernilai 90, rating ≥ 4,0 bernilai 80, hingga rating di bawah 3,0 bernilai 45.
+User Preference Engine
+User Preference Score merepresentasikan preferensi pengguna terhadap suatu spot berdasarkan riwayat favorite dan kunjungan, dengan nilai yang dibatasi (clamp) pada rentang 0 hingga 100.
+Safety Engine
+Safety Engine merupakan komponen yang menghasilkan Safety Multiplier untuk menyesuaikan skor akhir berdasarkan tingkat keamanan kondisi cuaca, angin, gelombang, arus, dan peringatan resmi BMKG. Penilaian kecepatan angin pada Safety Engine diadaptasi dari klasifikasi Skala Beaufort sebagai standar internasional untuk mengelompokkan kekuatan angin, yang kemudian dikalibrasi berdasarkan hasil observasi lapangan di kawasan pesisir Tanjung Kait, Desa Tanjung Anom. Tabel penilaian keamanan angin yang diterapkan adalah sebagai berikut.
+Tabel 4.4 Tabel Penilaian Keamanan Angin (Diadaptasi dari Skala Beaufort)
+No	Kecepatan Angin (km/jam)	Kategori Beaufort (Adaptasi)	Nilai Safety
+1	≤ 8	Tenang – Angin Sepoi Ringan	1,00
+2	9 – 14	Angin Sepoi Lembut	0,95
+3	15 – 19	Angin Sepoi Sedang	0,85
+4	20 – 28	Angin Segar	0,70
+5	29 – 38	Angin Kuat	0,55
+6	39 – 49	Angin Sangat Kuat / Mendekati Badai	0,40
+7	> 49	Badai	0,25
+Selain angin, Safety Engine juga menghitung Wave Safety berdasarkan tinggi gelombang (gelombang ≤ 0,5 m bernilai 1,00 hingga gelombang lebih dari 4 m bernilai 0,35), Current Safety berdasarkan kecepatan arus laut, serta penyesuaian tambahan apabila BMKG mengeluarkan peringatan resmi kondisi perairan. Nilai Safety Multiplier akhir diambil dari nilai keamanan terendah di antara seluruh faktor tersebut, kemudian disesuaikan dengan peringatan BMKG.
+Final Recommendation
+Skor akhir (Final Score) diperoleh dengan mengalikan skor dasar dengan faktor keselamatan hasil Safety Engine, kemudian dibatasi oleh distance score cap. Berdasarkan nilai akhir tersebut, sistem memberikan label rekomendasi sebagai berikut: skor ≥ 85 berlabel “Sangat Direkomendasikan”, skor ≥ 70 berlabel “Direkomendasikan”, skor ≥ 55 berlabel “Cukup Layak”, skor ≥ 40 berlabel “Perlu Waspada”, dan skor di bawah 40 berlabel “Tidak Direkomendasikan”.
+4.4.7 Implementasi Community
+Modul Community diimplementasikan melalui CommunityFragment, CreatePostFragment, CommunityViewModel, dan CommunityRepository. Pengguna dapat membuat postingan berupa foto yang diunggah melalui Cloudinary, caption, jenis ikan secara opsional, dan lokasi secara opsional. Fitur yang telah berjalan meliputi like/unlike, komentar, favorite atau bookmark, share, serta hapus postingan oleh pemiliknya.
+4.4.8 Implementasi Profile
+Modul Profile diimplementasikan melalui ProfileFragment, ProfileViewModel, dan ProfileRepository. Fitur yang tersedia meliputi edit profile, ganti foto profile melalui Cloudinary, statistik pengguna (jumlah postingan, spot, dan favorite), daftar spot saya, daftar spot favorit, daftar postingan saya, reset password, dan logout.
+4.4.9 Implementasi Firestore
+Cloud Firestore diimplementasikan sebagai basis data utama melalui FirebaseManager dan sejumlah kelas repository, di antaranya AuthRepository, FishingRepository, SpotRepository, CommunityRepository, ProfileRepository, FavoriteRepository, ReviewRepository, NotificationRepository, UserRepository, TideRepository, WeatherRepository, MarineHourlyRepository, dan DashboardStatsRepository. Pemilihan Firestore didasarkan pada kemampuannya melakukan sinkronisasi data secara realtime yang sesuai dengan kebutuhan aplikasi mobile berbasis cloud.
+4.4.10 Implementasi Cloudinary
+Cloudinary diimplementasikan sebagai layanan penyimpanan media untuk menggantikan Firebase Storage. Layanan ini digunakan untuk mengunggah foto profile, foto spot, dan foto postingan komunitas. Hasil unggahan direpresentasikan melalui kelas CloudinaryUploadResult pada CommunityRepository, yang kemudian URL gambarnya disimpan pada dokumen Firestore terkait.

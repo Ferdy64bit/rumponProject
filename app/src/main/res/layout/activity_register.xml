@@ -52,10 +52,11 @@
         <TextView
             android:id="@+id/tvBrandSubtitle"
             style="@style/TextAppearance.App.BodyMedium"
-            android:layout_width="260dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_4"
             android:gravity="center"
+            android:maxWidth="280dp"
             android:text="@string/register_header_subtitle"
             android:textColor="#DCEBFF"
             android:textSize="13sp" />

@@ -14,16 +14,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.java3.R;
 import com.example.java3.core.utils.Constants;
 import com.example.java3.core.utils.LocationUtils;
-import com.example.java3.data.repository.SpotRepository;
+import com.example.java3.data.repository.FavoriteRepository;
+import com.example.java3.data.repository.FishingRepository;
 import com.example.java3.databinding.ActivitySpotListBinding;
+import com.example.java3.domain.model.Favorite;
 import com.example.java3.domain.model.FishingPoint;
 import com.example.java3.presentation.adapters.SpotListAdapter;
 import com.example.java3.presentation.model.SpotUiModel;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 public class SpotListActivity extends AppCompatActivity {
     public static final String EXTRA_USER_LAT = "extra_user_lat";
@@ -35,11 +40,15 @@ public class SpotListActivity extends AppCompatActivity {
 
     private ActivitySpotListBinding binding;
     private SpotListAdapter adapter;
-    private SpotRepository spotRepository;
+    private FishingRepository fishingRepository;
+    private FavoriteRepository favoriteRepository;
+    private final List<FishingPoint> baseSpots = new ArrayList<>();
     private final List<SpotUiModel> allSpots = new ArrayList<>();
+    private final Set<String> favoriteSpotIds = new HashSet<>();
     private int activeFilter = FILTER_BEST;
     private double userLat;
     private double userLon;
+    private String currentUserId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +56,11 @@ public class SpotListActivity extends AppCompatActivity {
         binding = ActivitySpotListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        spotRepository = new SpotRepository();
+        fishingRepository = new FishingRepository();
+        favoriteRepository = new FavoriteRepository();
+        currentUserId = FirebaseAuth.getInstance().getCurrentUser() != null
+                ? FirebaseAuth.getInstance().getCurrentUser().getUid()
+                : null;
         userLat = getIntent().getDoubleExtra(EXTRA_USER_LAT, Constants.TANJUNG_ANOM_LAT);
         userLon = getIntent().getDoubleExtra(EXTRA_USER_LON, Constants.TANJUNG_ANOM_LON);
 
@@ -55,6 +68,7 @@ public class SpotListActivity extends AppCompatActivity {
         setupRecyclerView();
         setupListeners();
         loadSpots();
+        loadFavoriteIds();
     }
 
     private void setupSystemBars() {
@@ -67,6 +81,8 @@ public class SpotListActivity extends AppCompatActivity {
 
     private void setupRecyclerView() {
         adapter = new SpotListAdapter();
+        binding.rvSpotList.setHasFixedSize(true);
+        binding.rvSpotList.setItemViewCacheSize(8);
         binding.rvSpotList.setLayoutManager(new LinearLayoutManager(this));
         binding.rvSpotList.setAdapter(adapter);
         adapter.setOnSpotClickListener(this::openDetailSpot);
@@ -104,14 +120,14 @@ public class SpotListActivity extends AppCompatActivity {
     }
 
     private void loadSpots() {
-        spotRepository.getFishingPoints(new SpotRepository.FirestoreCallback<List<FishingPoint>>() {
+        fishingRepository.getFishingPoints(new FishingRepository.FirestoreCallback<List<FishingPoint>>() {
             @Override
             public void onSuccess(List<FishingPoint> result) {
-                allSpots.clear();
-                for (int i = 0; i < result.size(); i++) {
-                    allSpots.add(mapSpot(result.get(i), i));
+                baseSpots.clear();
+                if (result != null) {
+                    baseSpots.addAll(result);
                 }
-                applyFilterAndSearch();
+                rebuildSpotModels();
             }
 
             @Override
@@ -119,6 +135,45 @@ public class SpotListActivity extends AppCompatActivity {
                 Toast.makeText(SpotListActivity.this, error, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void loadFavoriteIds() {
+        if (currentUserId == null || currentUserId.trim().isEmpty()) {
+            favoriteSpotIds.clear();
+            applyFilterAndSearch();
+            return;
+        }
+        favoriteRepository.getUserFavorites(currentUserId, new FavoriteRepository.FirestoreCallback<List<Favorite>>() {
+            @Override
+            public void onSuccess(List<Favorite> result) {
+                favoriteSpotIds.clear();
+                if (result != null) {
+                    for (Favorite favorite : result) {
+                        if (favorite != null && favorite.getPointId() != null && !favorite.getPointId().trim().isEmpty()) {
+                            favoriteSpotIds.add(favorite.getPointId().trim());
+                        }
+                    }
+                }
+                applyFilterAndSearch();
+            }
+
+            @Override
+            public void onFailure(String error) {
+                favoriteSpotIds.clear();
+                applyFilterAndSearch();
+            }
+        });
+    }
+
+    private void rebuildSpotModels() {
+        allSpots.clear();
+        for (int i = 0; i < baseSpots.size(); i++) {
+            FishingPoint point = baseSpots.get(i);
+            if (point != null && FishingRepository.canUserSeeSpot(point, currentUserId)) {
+                allSpots.add(mapSpot(point, i));
+            }
+        }
+        applyFilterAndSearch();
     }
 
     private void applyFilterAndSearch() {
@@ -137,13 +192,19 @@ public class SpotListActivity extends AppCompatActivity {
         } else if (activeFilter == FILTER_FAVORITE) {
             List<SpotUiModel> favorites = new ArrayList<>();
             for (SpotUiModel spot : filtered) {
-                if (spot.isFavorite()) {
+                if (isFavoriteSpot(spot)) {
                     favorites.add(spot);
                 }
             }
             filtered = favorites;
         } else {
-            filtered.sort((a, b) -> Float.compare(b.getRating(), a.getRating()));
+            filtered.sort((a, b) -> {
+                int ratingCompare = Float.compare(b.getRating(), a.getRating());
+                if (ratingCompare != 0) return ratingCompare;
+                int reviewCompare = Integer.compare(b.getReviewCount(), a.getReviewCount());
+                if (reviewCompare != 0) return reviewCompare;
+                return Double.compare(a.getDistance(), b.getDistance());
+            });
         }
 
         adapter.submitList(filtered);
@@ -161,40 +222,55 @@ public class SpotListActivity extends AppCompatActivity {
                 point.getDescription()
         );
         return new SpotUiModel(
+                point.getId(),
                 nonBlank(point.getName(), "Spot tanpa nama"),
                 distance,
-                point.getRating(),
+                (float) point.getRating(),
                 point.getReviewCount(),
-                badgeColor(point.getRating()),
+                R.color.primary,
                 placeholder,
-                false,
+                favoriteSpotIds.contains(point.getId()),
                 point.getImageUrl(),
-                searchText
+                searchText,
+                nonBlank(point.getType(), "Spot memancing"),
+                nonBlank(point.getDescription(), "Deskripsi belum tersedia"),
+                point.getLatitude(),
+                point.getLongitude(),
+                0,
+                0,
+                "Rekomendasi dihitung di detail spot",
+                firstNonBlank(point.getOwnerId(), point.getUserId()),
+                nonBlank(point.getOwnerName(), "Fishing Point Member"),
+                nonBlank(point.getOwnerPhoto(), ""),
+                nonBlank(point.getVisibility(), "PUBLIC"),
+                point.getCreatedAt()
         );
     }
 
     private void openDetailSpot(SpotUiModel spot) {
         Intent intent = new Intent(this, DetailSpotActivity.class);
+        intent.putExtra(DetailSpotActivity.EXTRA_ID, spot.getId());
         intent.putExtra(DetailSpotActivity.EXTRA_NAME, spot.getName());
         intent.putExtra(DetailSpotActivity.EXTRA_DISTANCE, spot.getDistance());
         intent.putExtra(DetailSpotActivity.EXTRA_RATING, spot.getRating());
         intent.putExtra(DetailSpotActivity.EXTRA_REVIEWS, spot.getReviewCount());
         intent.putExtra(DetailSpotActivity.EXTRA_IMAGE_RES, spot.getImageResId());
+        intent.putExtra(DetailSpotActivity.EXTRA_IMAGE_URL, spot.getImageUrl());
+        intent.putExtra(DetailSpotActivity.EXTRA_TYPE, spot.getType());
+        intent.putExtra(DetailSpotActivity.EXTRA_DESCRIPTION, spot.getDescription());
+        intent.putExtra(DetailSpotActivity.EXTRA_LATITUDE, spot.getLatitude());
+        intent.putExtra(DetailSpotActivity.EXTRA_LONGITUDE, spot.getLongitude());
+        intent.putExtra(DetailSpotActivity.EXTRA_OWNER_ID, spot.getOwnerId());
+        intent.putExtra(DetailSpotActivity.EXTRA_OWNER_NAME, spot.getOwnerName());
+        intent.putExtra(DetailSpotActivity.EXTRA_OWNER_PHOTO, spot.getOwnerPhoto());
+        intent.putExtra(DetailSpotActivity.EXTRA_VISIBILITY, spot.getVisibility());
+        intent.putExtra(DetailSpotActivity.EXTRA_CREATED_AT, spot.getCreatedAt());
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
-    private int badgeColor(float rating) {
-        if (rating >= 4.5f) {
-            return Color.parseColor("#22C55E");
-        }
-        if (rating >= 4.0f) {
-            return Color.parseColor("#00B4D8");
-        }
-        if (rating >= 3.5f) {
-            return Color.parseColor("#F59E0B");
-        }
-        return Color.parseColor("#EF4444");
+    private boolean isFavoriteSpot(SpotUiModel spot) {
+        return spot != null && favoriteSpotIds.contains(spot.getId());
     }
 
     private int getPlaceholder(int index) {
@@ -220,5 +296,14 @@ public class SpotListActivity extends AppCompatActivity {
 
     private String nonBlank(String value, String fallback) {
         return value != null && !value.trim().isEmpty() ? value.trim() : fallback;
+    }
+
+    private String firstNonBlank(String... values) {
+        for (String value : values) {
+            if (value != null && !value.trim().isEmpty()) {
+                return value.trim();
+            }
+        }
+        return "";
     }
 }

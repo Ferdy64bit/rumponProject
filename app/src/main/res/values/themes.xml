@@ -35,11 +35,13 @@
         <item name="textAppearanceBodySmall">@style/TextAppearance.App.BodySmall</item>
 
         <!-- Component Themes -->
-        <item name="materialAlertDialogTheme">@style/ThemeOverlayAppMaterialAlertDialog</item>
         <item name="bottomSheetDialogTheme">@style/WidgetAppBottomSheet</item>
 
         <!-- Status Bar -->
         <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="Theme.Java3" parent="Base.Theme.Java3" />

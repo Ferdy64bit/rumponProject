@@ -14,9 +14,16 @@ public class FishingPoint {
     private String area;
     private String locationName;
     private String description;
-    private float rating;
+    private double rating;
     private int reviewCount;
     private String imageUrl;
+    private String ownerId;
+    private String userId;
+    private String ownerName;
+    private String ownerPhoto;
+    private String visibility;
+    private long createdAt;
+    private long updatedAt;
 
     /**
      * Empty constructor required for Firebase Firestore serialization.
@@ -24,8 +31,8 @@ public class FishingPoint {
     public FishingPoint() {
     }
 
-    public FishingPoint(String id, String name, double latitude, double longitude, 
-                        String type, String description, float rating, String imageUrl) {
+    public FishingPoint(String id, String name, double latitude, double longitude,
+                        String type, String description, double rating, String imageUrl) {
         this.id = id;
         this.name = name;
         this.latitude = latitude;
@@ -35,8 +42,6 @@ public class FishingPoint {
         this.rating = rating;
         this.imageUrl = imageUrl;
     }
-
-    // Getters and Setters
 
     public String getId() {
         return id;
@@ -110,11 +115,11 @@ public class FishingPoint {
         this.description = description;
     }
 
-    public float getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 
@@ -132,5 +137,61 @@ public class FishingPoint {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public String getOwnerPhoto() {
+        return ownerPhoto;
+    }
+
+    public void setOwnerPhoto(String ownerPhoto) {
+        this.ownerPhoto = ownerPhoto;
+    }
+
+    public String getVisibility() {
+        return visibility;
+    }
+
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
+    }
+
+    public long getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(long createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public long getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(long updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

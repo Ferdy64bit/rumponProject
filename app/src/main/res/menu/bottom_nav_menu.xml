@@ -9,6 +9,11 @@
         android:icon="@android:drawable/ic_dialog_map"
         android:title="@string/nav_map" />
     <item
+        android:id="@+id/nav_add_placeholder"
+        android:enabled="false"
+        android:icon="@drawable/ic_nav_placeholder"
+        android:title="" />
+    <item
         android:id="@+id/nav_community"
         android:icon="@android:drawable/ic_menu_gallery"
         android:title="@string/nav_community" />

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/detailScroll"
@@ -12,7 +13,7 @@
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:fillViewport="true"
-        android:paddingBottom="104dp"
+        android:paddingBottom="@dimen/bottom_nav_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,6 +89,37 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:tint="@color/white" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="@dimen/screen_margin"
+                    android:layout_marginBottom="@dimen/spacing_16"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/btnChangeSpotPhoto"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_detail_icon_button"
+                        android:contentDescription="Ganti foto spot"
+                        android:padding="11dp"
+                        android:src="@android:drawable/ic_menu_camera"
+                        app:tint="@color/white" />
+
+                    <ImageButton
+                        android:id="@+id/btnDeleteSpotPhoto"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="@dimen/spacing_8"
+                        android:background="@drawable/bg_detail_icon_button"
+                        android:contentDescription="Hapus foto spot"
+                        android:padding="11dp"
+                        android:src="@android:drawable/ic_menu_delete"
+                        app:tint="@color/white" />
+                </LinearLayout>
             </FrameLayout>
 
             <LinearLayout
@@ -128,9 +160,12 @@
                     <TextView
                         android:id="@+id/tvRating"
                         style="@style/TextAppearance.App.BodyMedium"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/spacing_4"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
                         android:text="4.8 (120 ulasan)"
                         android:textColor="@color/text_primary"
                         android:textSize="13sp" />
@@ -162,7 +197,26 @@
                         android:textSize="13sp" />
                 </LinearLayout>
 
-                <com.google.android.material.tabs.TabLayout
+
+                <TextView
+                    android:id="@+id/tvSpotOwner"
+                    style="@style/TextAppearance.App.BodySmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_6"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Dibuat oleh Fishing Point Member"
+                    android:textColor="@color/text_secondary" />
+
+                <TextView
+                    android:id="@+id/tvSpotVisibility"
+                    style="@style/TextAppearance.App.LabelSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_6"
+                    android:text="PUBLIC"
+                    android:textColor="@color/primary" />                <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabLayout"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
@@ -221,6 +275,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/tvDetailRecommendationStars"
                                 style="@style/TextAppearance.App.LabelLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -229,6 +284,7 @@
                                 android:textSize="18sp" />
 
                             <TextView
+                                android:id="@+id/tvDetailRecommendationTitle"
                                 style="@style/TextAppearance.App.TitleSmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -245,6 +301,7 @@
                             android:layout_marginStart="@dimen/spacing_12">
 
                             <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:id="@+id/progressDetailRecommendation"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:max="100"
@@ -255,6 +312,7 @@
                                 app:trackThickness="5dp" />
 
                             <TextView
+                                android:id="@+id/tvDetailRecommendationPercent"
                                 style="@style/TextAppearance.App.LabelLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -292,6 +350,7 @@
                             android:text="@string/info_weather" />
 
                         <TextView
+                            android:id="@+id/tvWeatherValue"
                             style="@style/DetailInfoValue"
                             android:text="@string/weather_cloudy_id" />
                     </LinearLayout>
@@ -312,6 +371,7 @@
                             android:text="@string/info_wind" />
 
                         <TextView
+                            android:id="@+id/tvWindValue"
                             style="@style/DetailInfoValue"
                             android:text="12 km/h" />
                     </LinearLayout>
@@ -332,6 +392,7 @@
                             android:text="@string/info_humidity" />
 
                         <TextView
+                            android:id="@+id/tvHumidityValue"
                             style="@style/DetailInfoValue"
                             android:text="72%" />
                     </LinearLayout>
@@ -352,6 +413,7 @@
                             android:text="@string/info_fish_activity" />
 
                         <TextView
+                            android:id="@+id/tvFishActivityValue"
                             style="@style/DetailInfoValue"
                             android:text="@string/fish_activity_high" />
                     </LinearLayout>
@@ -372,6 +434,7 @@
                             android:text="@string/info_tide" />
 
                         <TextView
+                            android:id="@+id/tvTideValue"
                             style="@style/DetailInfoValue"
                             android:text="Naik (1.2 m)" />
                     </LinearLayout>
@@ -404,12 +467,15 @@
     <LinearLayout
         android:id="@+id/bottomActions"
         android:layout_width="0dp"
-        android:layout_height="88dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/bg_bottom_action"
         android:gravity="center_vertical"
+        android:minHeight="88dp"
         android:orientation="horizontal"
+        android:paddingTop="@dimen/spacing_12"
         android:paddingStart="@dimen/screen_margin"
         android:paddingEnd="@dimen/screen_margin"
+        android:paddingBottom="@dimen/spacing_12"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -421,6 +487,8 @@
             android:layout_height="52dp"
             android:layout_marginEnd="@dimen/spacing_10"
             android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:text="@string/navigation"
             android:textColor="@color/primary"
             app:icon="@drawable/ic_navigation_rounded"
@@ -434,8 +502,12 @@
             android:layout_height="52dp"
             android:layout_marginStart="@dimen/spacing_10"
             android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:text="@string/save_favorite"
             app:icon="@drawable/ic_bookmark_rounded"
             app:iconTint="@color/white" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

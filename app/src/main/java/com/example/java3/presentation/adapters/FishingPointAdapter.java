@@ -23,7 +23,9 @@ public class FishingPointAdapter extends RecyclerView.Adapter<FishingPointAdapte
 
     public void updateData(List<FishingPointWithRecommendation> newItems) {
         items.clear();
-        items.addAll(newItems);
+        if (newItems != null) {
+            items.addAll(newItems);
+        }
         notifyDataSetChanged();
     }
 
@@ -54,9 +56,7 @@ public class FishingPointAdapter extends RecyclerView.Adapter<FishingPointAdapte
 
         void bind(FishingPointWithRecommendation item, int position) {
             binding.tvSpotName.setText(item.getFishingPoint().getName());
-            binding.tvRating.setText(String.format(Locale.getDefault(), "%.1f", item.getFishingPoint().getRating()));
             binding.tvDistance.setText(String.format(Locale.getDefault(), "%.1f km", item.getDistance()));
-            binding.tvRecommendationText.setText(createStars(item.getRecommendation().getStars()));
 
             String imageUrl = item.getFishingPoint().getImageUrl();
             if (imageUrl == null || imageUrl.trim().isEmpty()) {
@@ -66,6 +66,8 @@ public class FishingPointAdapter extends RecyclerView.Adapter<FishingPointAdapte
                         .load(imageUrl)
                         .placeholder(getPlaceholder(position))
                         .error(getPlaceholder(position))
+                        .centerCrop()
+                        .thumbnail(0.25f)
                         .into(binding.ivSpotImage);
             }
         }
@@ -74,18 +76,11 @@ public class FishingPointAdapter extends RecyclerView.Adapter<FishingPointAdapte
             int[] images = {
                     R.drawable.img_spot_dermaga,
                     R.drawable.img_spot_breakwater,
-                    R.drawable.img_spot_muara
+                    R.drawable.img_spot_muara,
+                    R.drawable.img_spot_pantai,
+                    R.drawable.img_spot_pulau
             };
             return images[position % images.length];
-        }
-
-        private String createStars(int count) {
-            StringBuilder stars = new StringBuilder();
-            int safeCount = Math.max(1, Math.min(count, 5));
-            for (int i = 0; i < safeCount; i++) {
-                stars.append('\u2605');
-            }
-            return stars.toString();
         }
     }
 }

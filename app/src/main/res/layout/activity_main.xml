@@ -6,32 +6,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:clipChildren="false"
+    android:fitsSystemWindows="true"
     tools:context=".presentation.activities.MainActivity">
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="true"
         android:paddingBottom="@dimen/bottom_nav_height" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/bottom_nav_height"
         android:layout_gravity="bottom"
+        android:clipChildren="false"
         app:backgroundTint="@color/surface"
         app:fabAlignmentMode="center"
         app:fabCradleMargin="@dimen/spacing_8"
         app:fabCradleRoundedCornerRadius="@dimen/radius_16"
-        app:fabCradleVerticalOffset="0dp">
+        app:fabCradleVerticalOffset="@dimen/spacing_2">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/bottom_nav_height"
             android:layout_marginEnd="@dimen/spacing_16"
             android:background="@color/transparent"
             app:elevation="0dp"
+            app:itemActiveIndicatorStyle="@null"
+            app:itemGravity="center"
+            app:itemIconGravity="top"
+            app:itemIconSize="@dimen/spacing_24"
+            app:itemHorizontalTranslationEnabled="false"
+            app:itemBackground="@android:color/transparent"
+            app:itemPaddingBottom="@dimen/spacing_4"
+            app:itemPaddingTop="@dimen/spacing_6"
+            app:itemTextAppearanceActive="@style/TextAppearance.App.LabelSmall"
+            app:itemTextAppearanceInactive="@style/TextAppearance.App.LabelSmall"
+            app:itemTextColor="@color/text_secondary"
+            app:labelMaxLines="1"
+            app:labelVisibilityMode="labeled"
+            app:measureBottomPaddingFromLabelBaseline="false"
             app:menu="@menu/bottom_nav_menu" />
 
     </com.google.android.material.bottomappbar.BottomAppBar>
@@ -41,8 +59,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@android:drawable/ic_input_add"
+        app:fabSize="normal"
         app:backgroundTint="@color/primary"
         app:layout_anchor="@id/bottomAppBar"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlayAppCornerFull"
         app:tint="@color/onPrimary"
         android:contentDescription="@string/add_post" />
 

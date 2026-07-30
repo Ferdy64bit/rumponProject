@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:fillViewport="true"
-        android:paddingBottom="@dimen/spacing_32">
+        android:paddingBottom="@dimen/bottom_nav_safe_padding">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,10 +22,11 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/profileHero"
                 android:layout_width="match_parent"
-                android:layout_height="292dp"
+                android:layout_height="wrap_content"
+                android:minHeight="292dp"
                 android:background="@drawable/bg_auth_header"
                 android:paddingStart="@dimen/screen_margin"
-                android:paddingTop="@dimen/spacing_24"
+                android:paddingTop="@dimen/top_safe_spacing"
                 android:paddingEnd="@dimen/screen_margin">
 
                 <ImageButton
@@ -38,6 +40,18 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:tint="@color/white" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progressPhotoUpload"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    app:indicatorColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/ivProfileLarge"
+                    app:layout_constraintEnd_toEndOf="@id/ivProfileLarge"
+                    app:layout_constraintStart_toStartOf="@id/ivProfileLarge"
+                    app:layout_constraintTop_toTopOf="@id/ivProfileLarge" />
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/ivProfileLarge"
@@ -57,10 +71,13 @@
                 <TextView
                     android:id="@+id/tvProfileName"
                     style="@style/TextAppearance.App.TitleLarge"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_12"
+                    android:ellipsize="end"
                     android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
                     android:text="@string/profile_name"
                     android:textColor="@color/white"
                     android:textSize="22sp"
@@ -71,8 +88,11 @@
                 <TextView
                     android:id="@+id/tvProfileUsername"
                     style="@style/TextAppearance.App.BodyMedium"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
                     android:text="@string/profile_username"
                     android:textColor="#DCEBFF"
                     android:textSize="13sp"
@@ -106,10 +126,28 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/spacing_4"
-                        android:text="@string/angler_pro"
+                        android:text="Fishing Point Member"
                         android:textColor="@color/white"
                         android:textSize="10sp" />
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvProfileBio"
+                    style="@style/TextAppearance.App.BodySmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:layout_marginBottom="@dimen/spacing_24"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="Pemancing Tanjung Anom"
+                    android:textColor="#DCEBFF"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/badgeAnglerPro" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
@@ -123,32 +161,41 @@
                 <LinearLayout
                     android:id="@+id/statsContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="82dp"
-                    android:layout_marginTop="-36dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_16"
                     android:background="@drawable/bg_profile_stats"
                     android:elevation="4dp"
+                    android:minHeight="96dp"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:padding="@dimen/spacing_12">
+                    android:paddingStart="@dimen/spacing_12"
+                    android:paddingTop="@dimen/spacing_16"
+                    android:paddingEnd="@dimen/spacing_12"
+                    android:paddingBottom="@dimen/spacing_16">
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tvStatPosts"
                             style="@style/TextAppearance.App.TitleMedium"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="23"
+                            android:includeFontPadding="true"
+                            android:minLines="1"
+                            android:text="0"
                             android:textColor="@color/text_primary" />
 
                         <TextView
                             style="@style/TextAppearance.App.BodySmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:includeFontPadding="true"
+                            android:minLines="1"
                             android:text="@string/posts"
                             android:textColor="@color/text_secondary"
                             android:textSize="11sp" />
@@ -161,23 +208,28 @@
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tvStatSpots"
                             style="@style/TextAppearance.App.TitleMedium"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="128"
+                            android:includeFontPadding="true"
+                            android:minLines="1"
+                            android:text="0"
                             android:textColor="@color/text_primary" />
 
                         <TextView
                             style="@style/TextAppearance.App.BodySmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/followers"
+                            android:includeFontPadding="true"
+                            android:minLines="1"
+                            android:text="Spot"
                             android:textColor="@color/text_secondary"
                             android:textSize="11sp" />
                     </LinearLayout>
@@ -189,23 +241,28 @@
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tvStatFavorites"
                             style="@style/TextAppearance.App.TitleMedium"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="76"
+                            android:includeFontPadding="true"
+                            android:minLines="1"
+                            android:text="0"
                             android:textColor="@color/text_primary" />
 
                         <TextView
                             style="@style/TextAppearance.App.BodySmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/following"
+                            android:includeFontPadding="true"
+                            android:minLines="1"
+                            android:text="Favorit"
                             android:textColor="@color/text_secondary"
                             android:textSize="11sp" />
                     </LinearLayout>
@@ -225,37 +282,48 @@
                         android:id="@+id/menuProfile"
                         layout="@layout/item_profile_menu"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp" />
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@+id/menuStats"
+                        layout="@layout/item_profile_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:id="@+id/menuMySpots"
+                        layout="@layout/item_profile_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                     <include
                         android:id="@+id/menuFavorite"
                         layout="@layout/item_profile_menu"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp" />
+                        android:layout_height="wrap_content" />
 
                     <include
-                        android:id="@+id/menuHistory"
+                        android:id="@+id/menuMyPosts"
                         layout="@layout/item_profile_menu"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp" />
+                        android:layout_height="wrap_content" />
 
                     <include
                         android:id="@+id/menuSettings"
                         layout="@layout/item_profile_menu"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp" />
+                        android:layout_height="wrap_content" />
 
                     <include
-                        android:id="@+id/menuHelp"
+                        android:id="@+id/menuSecurity"
                         layout="@layout/item_profile_menu"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp" />
+                        android:layout_height="wrap_content" />
 
                     <include
                         android:id="@+id/menuAbout"
                         layout="@layout/item_profile_menu"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp" />
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <View

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/homeScroll"
@@ -12,7 +13,7 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:fillViewport="true"
-        android:paddingBottom="@dimen/spacing_24">
+        android:paddingBottom="@dimen/bottom_nav_safe_padding">
 
         <LinearLayout
             android:id="@+id/homeContent"
@@ -20,9 +21,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingStart="@dimen/screen_margin"
-            android:paddingTop="@dimen/spacing_20"
+            android:paddingTop="@dimen/top_safe_spacing"
             android:paddingEnd="@dimen/screen_margin"
-            android:paddingBottom="@dimen/spacing_32">
+            android:paddingBottom="@dimen/spacing_24">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/homeHeader"
@@ -172,7 +173,7 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="0.95"
                             android:orientation="vertical">
 
                             <TextView
@@ -197,13 +198,13 @@
                         <View
                             android:layout_width="1dp"
                             android:layout_height="34dp"
-                            android:layout_marginHorizontal="@dimen/spacing_12"
+                            android:layout_marginHorizontal="@dimen/spacing_8"
                             android:background="#33FFFFFF" />
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="0.85"
                             android:gravity="center"
                             android:orientation="vertical">
 
@@ -229,13 +230,13 @@
                         <View
                             android:layout_width="1dp"
                             android:layout_height="34dp"
-                            android:layout_marginHorizontal="@dimen/spacing_12"
+                            android:layout_marginHorizontal="@dimen/spacing_8"
                             android:background="#33FFFFFF" />
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="1.2"
                             android:gravity="end"
                             android:orientation="vertical">
 
@@ -302,6 +303,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/recommendationStatusPanel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_recommend_card"
@@ -327,23 +329,126 @@
                             <TextView
                                 android:id="@+id/tvRecommendationTitle"
                                 style="@style/TextAppearance.App.TitleMedium"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/spacing_4"
                                 android:fontFamily="sans-serif-medium"
+                                android:maxLines="2"
                                 android:text="Sangat Direkomendasikan"
                                 android:textColor="@color/white"
                                 android:textSize="16sp" />
 
                             <TextView
+                                android:id="@+id/tvRecommendationSubtitle"
                                 style="@style/TextAppearance.App.BodySmall"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/spacing_4"
                                 android:alpha="0.88"
+                                android:maxLines="2"
                                 android:text="Kondisi ideal untuk memancing hari ini."
                                 android:textColor="@color/white"
                                 android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:id="@+id/recommendationInsightRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_14"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:minHeight="@dimen/touch_target"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/spacing_24"
+                                        android:layout_height="@dimen/spacing_24"
+                                        android:contentDescription="@string/info_weather"
+                                        android:src="@drawable/ic_tide_wave"
+                                        app:tint="@color/white" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/spacing_4"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/tvSafetyScore"
+                                            style="@style/TextAppearance.App.LabelSmall"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:maxLines="1"
+                                            android:text="Safe 78%"
+                                            android:textColor="@color/white" />
+
+                                        <TextView
+                                            android:id="@+id/tvSafetyLabel"
+                                            style="@style/TextAppearance.App.BodySmall"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:alpha="0.84"
+                                            android:maxLines="2"
+                                            android:text="Aman"
+                                            android:textColor="@color/white"
+                                            android:textSize="11sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginVertical="@dimen/spacing_6"
+                                    android:background="#40FFFFFF" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:minHeight="@dimen/touch_target"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/spacing_24"
+                                        android:layout_height="@dimen/spacing_24"
+                                        android:contentDescription="@string/info_fish_activity"
+                                        android:src="@drawable/ic_fish_small"
+                                        app:tint="@color/white" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/spacing_4"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/tvActivityScore"
+                                            style="@style/TextAppearance.App.LabelSmall"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:maxLines="1"
+                                            android:text="Ikan 75%"
+                                            android:textColor="@color/white" />
+
+                                        <TextView
+                                            android:id="@+id/tvActivityLabel"
+                                            style="@style/TextAppearance.App.BodySmall"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:alpha="0.84"
+                                            android:maxLines="2"
+                                            android:text="Baik"
+                                            android:textColor="@color/white"
+                                            android:textSize="11sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
                         </LinearLayout>
 
                         <FrameLayout
@@ -358,7 +463,7 @@
                                 android:max="100"
                                 android:progress="94"
                                 app:indicatorColor="@color/white"
-                                app:indicatorSize="66dp"
+                                app:indicatorSize="58dp"
                                 app:trackColor="#4DFFFFFF"
                                 app:trackThickness="5dp" />
 
@@ -403,7 +508,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="PASANG SURUT"
+                            android:text="KONDISI PERAIRAN LIVE"
                             android:textColor="@color/text_secondary" />
 
                         <TextView
@@ -432,7 +537,7 @@
                                 style="@style/TextAppearance.App.BodySmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Pasang"
+                                android:text="Gelombang/jam"
                                 android:textColor="@color/text_secondary" />
 
                             <TextView
@@ -463,7 +568,7 @@
                                 style="@style/TextAppearance.App.BodySmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Sekarang"
+                                android:text="Status BMKG"
                                 android:textColor="@color/text_secondary" />
 
                             <TextView
@@ -493,35 +598,65 @@
                                 style="@style/TextAppearance.App.BodySmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Surut"
+                                android:text="Angin BMKG"
                                 android:textColor="@color/text_secondary" />
 
                             <TextView
                                 android:id="@+id/tvLowTideTime"
                                 style="@style/TextAppearance.App.TitleSmall"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:maxLines="3"
                                 android:text="13:45"
-                                android:textColor="@color/text_primary" />
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
 
                             <TextView
                                 android:id="@+id/tvLowTideHeight"
                                 style="@style/TextAppearance.App.BodySmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:maxLines="1"
                                 android:text="0.6 m"
                                 android:textColor="@color/text_secondary" />
                         </LinearLayout>
                     </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/ivTideChart"
+                    <com.example.java3.presentation.views.WaveHourlyChartView
+                        android:id="@+id/waveHourlyChart"
                         android:layout_width="match_parent"
-                        android:layout_height="92dp"
+                        android:layout_height="148dp"
                         android:layout_marginTop="@dimen/spacing_12"
-                        android:contentDescription="@string/tide_chart"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ic_tide_chart" />
+                        android:contentDescription="@string/tide_chart" />
+
+                    <TextView
+                        android:id="@+id/tvWaveSource"
+                        style="@style/TextAppearance.App.BodySmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_6"
+                        android:text="Grafik gelombang per jam: Open-Meteo Marine"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        style="@style/TextAppearance.App.LabelSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_12"
+                        android:text="PREDIKSI KONDISI MEMANCING"
+                        android:textColor="@color/text_secondary" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvBmkgForecast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_8"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="never"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_bmkg_forecast" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -554,7 +689,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvRecommendedSpots"
                 android:layout_width="match_parent"
-                android:layout_height="124dp"
+                android:layout_height="@dimen/nearby_spot_list_height"
                 android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
                 android:overScrollMode="never"

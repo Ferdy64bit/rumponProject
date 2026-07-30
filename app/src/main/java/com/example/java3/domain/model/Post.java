@@ -1,5 +1,10 @@
 package com.example.java3.domain.model;
 
+import com.google.firebase.firestore.Exclude;
+import com.google.firebase.firestore.ServerTimestamp;
+
+import java.util.Date;
+
 /**
  * Model representing a Social Post in the community.
  * Follows strict OOP principles with private fields and public accessors.
@@ -10,29 +15,39 @@ public class Post {
     private String userName;
     private String userProfilePic;
     private String imageUrl;
+    private String cloudinaryPublicId;
     private String caption;
+
+    // GPS Location
     private String locationName;
-    private long timestamp;
+    private double latitude;
+    private double longitude;
+
+    // Catch Details
+    private String fishType;
+    private double fishWeight;
+    private String bait;
+
+    // External Conditions
+    private String weatherCondition;
+    private String tideStatus;
+
+    @ServerTimestamp
+    private Date timestamp;
+
     private int likesCount;
     private int commentsCount;
+
+    // Internal usage for UI
+    @Exclude
+    private boolean isLiked;
+    @Exclude
+    private boolean isFavorite;
 
     /**
      * Empty constructor required for Firebase Firestore serialization.
      */
     public Post() {
-    }
-
-    public Post(String id, String userId, String userName, String userProfilePic, 
-                String imageUrl, String caption, String locationName, long timestamp) {
-        this.id = id;
-        this.userId = userId;
-        this.userName = userName;
-        this.userProfilePic = userProfilePic;
-        this.imageUrl = imageUrl;
-        this.caption = caption;
-        this.locationName = locationName;
-        this.timestamp = timestamp;
-        this.likesCount = 0;
     }
 
     // Getters and Setters
@@ -77,6 +92,14 @@ public class Post {
         this.imageUrl = imageUrl;
     }
 
+    public String getCloudinaryPublicId() {
+        return cloudinaryPublicId;
+    }
+
+    public void setCloudinaryPublicId(String cloudinaryPublicId) {
+        this.cloudinaryPublicId = cloudinaryPublicId;
+    }
+
     public String getCaption() {
         return caption;
     }
@@ -93,11 +116,67 @@ public class Post {
         this.locationName = locationName;
     }
 
-    public long getTimestamp() {
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getFishType() {
+        return fishType;
+    }
+
+    public void setFishType(String fishType) {
+        this.fishType = fishType;
+    }
+
+    public double getFishWeight() {
+        return fishWeight;
+    }
+
+    public void setFishWeight(double fishWeight) {
+        this.fishWeight = fishWeight;
+    }
+
+    public String getBait() {
+        return bait;
+    }
+
+    public void setBait(String bait) {
+        this.bait = bait;
+    }
+
+    public String getWeatherCondition() {
+        return weatherCondition;
+    }
+
+    public void setWeatherCondition(String weatherCondition) {
+        this.weatherCondition = weatherCondition;
+    }
+
+    public String getTideStatus() {
+        return tideStatus;
+    }
+
+    public void setTideStatus(String tideStatus) {
+        this.tideStatus = tideStatus;
+    }
+
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(long timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
 
@@ -115,5 +194,23 @@ public class Post {
 
     public void setCommentsCount(int commentsCount) {
         this.commentsCount = commentsCount;
+    }
+
+    @Exclude
+    public boolean isLiked() {
+        return isLiked;
+    }
+
+    public void setLiked(boolean liked) {
+        isLiked = liked;
+    }
+
+    @Exclude
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
     }
 }

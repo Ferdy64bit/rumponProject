@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbar"
         android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_height="72dp"
         android:paddingStart="@dimen/screen_margin"
         android:paddingEnd="@dimen/screen_margin"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +104,9 @@
         android:layout_marginStart="@dimen/screen_margin"
         android:layout_marginTop="@dimen/spacing_14"
         android:layout_marginEnd="@dimen/screen_margin"
-        app:singleLine="true"
+        app:chipSpacingHorizontal="@dimen/spacing_8"
+        app:chipSpacingVertical="@dimen/spacing_8"
+        app:singleLine="false"
         app:singleSelection="true"
         app:selectionRequired="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,9 +116,8 @@
         <com.google.android.material.chip.Chip
             android:id="@+id/chipBest"
             style="@style/Widget.Material3.Chip.Filter"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_weight="1"
             android:checkable="true"
             android:checked="true"
             android:gravity="center"
@@ -128,9 +130,8 @@
         <com.google.android.material.chip.Chip
             android:id="@+id/chipNearest"
             style="@style/Widget.Material3.Chip.Filter"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_weight="1"
             android:checkable="true"
             android:gravity="center"
             android:text="@string/filter_nearest"
@@ -142,9 +143,8 @@
         <com.google.android.material.chip.Chip
             android:id="@+id/chipFavorite"
             style="@style/Widget.Material3.Chip.Filter"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_weight="1"
             android:checkable="true"
             android:gravity="center"
             android:text="@string/filter_favorite"
@@ -163,7 +163,7 @@
         android:layout_marginEnd="@dimen/screen_margin"
         android:clipToPadding="false"
         android:overScrollMode="never"
-        android:paddingBottom="@dimen/spacing_24"
+        android:paddingBottom="@dimen/bottom_nav_safe_padding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
